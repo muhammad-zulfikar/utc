@@ -1,4 +1,4 @@
-import { Pickaxe, Wrench, Calculator, Users, ShieldCheck, Building2, Phone, Mail } from 'lucide-react'
+import { Pickaxe, Wrench, Calculator, Users, ShieldCheck } from 'lucide-react'
 
 const services = {
     miningElectrical: {

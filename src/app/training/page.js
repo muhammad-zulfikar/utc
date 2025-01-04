@@ -1,132 +1,105 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Input } from "@/components/ui/input"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuCheckboxItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
-import { Filter } from "lucide-react"
+import React from 'react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/LanguageContext";
+import { Building2, Users, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-const trainings = [
-  { name: "Leadership Development", duration: "2 days", level: "Advanced", price: "$1,500" },
-  { name: "Project Management", duration: "3 days", level: "Intermediate", price: "$2,000" },
-  { name: "Financial Management", duration: "2 days", level: "Beginner", price: "$1,200" },
-  { name: "Digital Marketing", duration: "2 days", level: "Intermediate", price: "$1,300" },
-  { name: "Data Analysis", duration: "3 days", level: "Advanced", price: "$2,200" },
-  { name: "Agile Methodologies", duration: "2 days", level: "Intermediate", price: "$1,400" },
-  { name: "Change Management", duration: "3 days", level: "Advanced", price: "$2,500" },
-  { name: "Business Analytics", duration: "2 days", level: "Intermediate", price: "$1,600" },
-  { name: "Time Management", duration: "1 day", level: "Beginner", price: "$800" },
-  { name: "Customer Relationship Management", duration: "3 days", level: "Intermediate", price: "$2,100" },
-  { name: "Artificial Intelligence in Business", duration: "4 days", level: "Advanced", price: "$3,000" },
-  { name: "Strategic Marketing", duration: "3 days", level: "Advanced", price: "$2,400" },
-  { name: "Sales Leadership", duration: "2 days", level: "Intermediate", price: "$1,700" },
-  { name: "Personal Branding", duration: "1 day", level: "Beginner", price: "$600" },
-  { name: "Public Speaking", duration: "2 days", level: "Intermediate", price: "$1,200" },
-  { name: "Conflict Resolution", duration: "2 days", level: "Beginner", price: "$1,000" },
-  { name: "Product Management", duration: "3 days", level: "Intermediate", price: "$2,300" },
-  { name: "Negotiation Skills", duration: "2 days", level: "Intermediate", price: "$1,500" },
-  { name: "E-commerce Strategies", duration: "3 days", level: "Advanced", price: "$2,500" },
-  { name: "Data Science", duration: "5 days", level: "Advanced", price: "$3,200" },
-  { name: "Creative Thinking", duration: "1 day", level: "Beginner", price: "$700" },
-  { name: "Financial Planning", duration: "3 days", level: "Intermediate", price: "$2,000" },
-  { name: "Cybersecurity", duration: "4 days", level: "Advanced", price: "$2,800" },
-  { name: "Excel for Business", duration: "2 days", level: "Beginner", price: "$900" },
-  { name: "Social Media Marketing", duration: "2 days", level: "Intermediate", price: "$1,500" },
-  { name: "Brand Management", duration: "3 days", level: "Advanced", price: "$2,400" },
-  { name: "Innovation Management", duration: "2 days", level: "Intermediate", price: "$1,800" },
-  { name: "Team Building", duration: "1 day", level: "Beginner", price: "$650" },
-  { name: "Employee Engagement", duration: "2 days", level: "Intermediate", price: "$1,200" },
-  { name: "Digital Transformation", duration: "4 days", level: "Advanced", price: "$3,100" },
-  { name: "Leadership in Crisis", duration: "3 days", level: "Advanced", price: "$2,700" },
-  { name: "Sustainability in Business", duration: "2 days", level: "Intermediate", price: "$1,600" },
-  { name: "Human Resource Management", duration: "3 days", level: "Intermediate", price: "$2,200" },
-  { name: "Marketing Analytics", duration: "2 days", level: "Intermediate", price: "$1,700" },
-  { name: "Data Visualization", duration: "3 days", level: "Advanced", price: "$2,500" },
-  { name: "Lean Six Sigma", duration: "5 days", level: "Advanced", price: "$3,500" },
-]
+const ServicesSection = () => {
+  const { t } = useLanguage();
 
-function Training() {
-  const [search, setSearch] = useState("")
-  const [selectedLevels, setSelectedLevels] = useState([])
-
-  const levels = ["Beginner", "Intermediate", "Advanced"]
-
-  const filteredTrainings = trainings.filter(training => {
-    const matchesSearch = training.name.toLowerCase().includes(search.toLowerCase())
-    const matchesLevel = selectedLevels.length === 0 || selectedLevels.includes(training.level)
-    return matchesSearch && matchesLevel
-  })
+  const services = [
+    {
+      title: "Public Training Programs",
+      description: "Open enrollment courses designed for individuals and small teams. Join a diverse group of professionals in our structured learning environment with industry-leading instructors.",
+      features: [
+        "Flexible scheduling options",
+        "Networking opportunities",
+        "Standardized curriculum",
+        "Certificate upon completion"
+      ],
+      icon: <Users className="w-10 h-10 text-[#FFC000]" />,
+      link: "/training/public",
+      imageSrc: "/pexels2.jpg"
+    },
+    {
+      title: "In-House Training",
+      description: "Customized training solutions delivered exclusively to your organization. We adapt our content to address your specific challenges and business objectives.",
+      features: [
+        "Tailored content delivery",
+        "Company-specific cases",
+        "On-site or virtual options",
+        "Team building focus"
+      ],
+      icon: <Building2 className="w-10 h-10 text-[#FFC000]" />,
+      link: "/training/in-house",
+      imageSrc: "/pexels3.jpg"
+    }
+  ];
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-8 text-center">Training Programs</h1>
-      <p className="text-center mb-12 max-w-2xl mx-auto">
-        Our public training programs are designed to provide practical experience to participants, making it easy to apply in their workplace.
-      </p>
-      
-      <div className="flex gap-4 mb-6">
-        <Input
-          placeholder="Search training..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="max-w-sm"
-        />
+    <div className="bg-gray-50 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Our Training Services
+          </h2>
+          <p className="mt-4 text-xl text-gray-600">
+            Choose the training format that best suits your needs
+          </p>
+        </div>
         
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">
-              <Filter className="mr-2 h-4 w-4" />
-              Filter Level
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            {levels.map((level) => (
-              <DropdownMenuCheckboxItem
-                key={level}
-                checked={selectedLevels.includes(level)}
-                onCheckedChange={(checked) => {
-                  setSelectedLevels(
-                    checked 
-                      ? [...selectedLevels, level]
-                      : selectedLevels.filter((l) => l !== level)
-                  )
-                }}
-              >
-                {level}
-              </DropdownMenuCheckboxItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Duration</TableHead>
-            <TableHead>Level</TableHead>
-            <TableHead className="text-right">Price</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {filteredTrainings.map((training) => (
-            <TableRow key={training.name}>
-              <TableCell className="font-medium">{training.name}</TableCell>
-              <TableCell>{training.duration}</TableCell>
-              <TableCell>{training.level}</TableCell>
-              <TableCell className="text-right">{training.price}</TableCell>
-            </TableRow>
+        <div className="grid md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-48 overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${service.imageSrc})`,
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute top-4 left-4">
+                  {service.icon}
+                </div>
+              </div>
+              
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
+                <CardDescription className="text-base">{service.description}</CardDescription>
+              </CardHeader>
+              
+              <CardContent>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-gray-600">
+                      <span className="mr-2 text-[#FFC000]">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              
+              <CardFooter>
+                <Link href={service.link} className="w-full">
+                  <Button 
+                    variant="default" 
+                    className="w-full group"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
           ))}
-        </TableBody>
-      </Table>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Training
+export default ServicesSection;

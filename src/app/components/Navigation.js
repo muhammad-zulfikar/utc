@@ -3,7 +3,14 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu } from 'lucide-react'
+import { Menu, Globe } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -23,6 +30,7 @@ import { usePathname } from "next/navigation"
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -37,11 +45,11 @@ export default function Navigation() {
 
             {/* Desktop Navigation Links */}
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 text-gray-700">
-              <NavLink href="/">Home</NavLink>
+              <NavLink href="/">{t('nav.home')}</NavLink>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>Profile</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>{t('nav.profile.title')}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="w-[400px] p-4 md:w-[500px]">
                         <div className="grid gap-4">
@@ -49,25 +57,25 @@ export default function Navigation() {
                             href="/about"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">About us</div>
+                            <div className="text-sm font-medium">{t('nav.profile.aboutUs')}</div>
                           </Link>
                           <Link
                             href="/about"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">Vision & Mission</div>
+                            <div className="text-sm font-medium">{t('nav.profile.visionMission')}</div>
                           </Link>
                           <Link
-                            href="/training/in-house"
+                            href="/about"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">History</div>
+                            <div className="text-sm font-medium">{t('nav.profile.history')}</div>
                           </Link>
                           <Link
-                            href="/training/in-house"
+                            href="/about"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">Structure</div>
+                            <div className="text-sm font-medium">{t('nav.profile.structure')}</div>
                           </Link>
                         </div>
                       </div>
@@ -78,7 +86,7 @@ export default function Navigation() {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>{t('nav.services.title')}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="w-[400px] p-4 md:w-[500px] lg:w-[600px]">
                         <div className="grid gap-4">
@@ -86,18 +94,18 @@ export default function Navigation() {
                             href="/training/public"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">Public Training</div>
+                            <div className="text-sm font-medium">{t('nav.services.publicTraining')}</div>
                             <div className="text-sm text-muted-foreground">
-                              Join our scheduled public training sessions
+                              {t('nav.services.publicTrainingDesc')}
                             </div>
                           </Link>
                           <Link
                             href="/training/in-house"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">In-House Training</div>
+                            <div className="text-sm font-medium">{t('nav.services.inHouseTraining')}</div>
                             <div className="text-sm text-muted-foreground">
-                              Customized training programs for your organization
+                              {t('nav.services.inHouseTrainingDesc')}
                             </div>
                           </Link>
                         </div>
@@ -106,17 +114,49 @@ export default function Navigation() {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/contact">{t('nav.contact')}</NavLink>
             </div>
           </div>
 
-          {/* Button and Mobile Menu */}
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Button variant="default">Schedule a Consultation</Button>
+          {/* Language Selector and Consultation Button */}
+          <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Globe className="h-4 w-4" />
+                  <span className="sr-only">Toggle language</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  <span className={language === 'en' ? 'font-bold' : ''}>English</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('id')}>
+                  <span className={language === 'id' ? 'font-bold' : ''}>Indonesia</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Button variant="default">{t('nav.consultation')}</Button>
           </div>
 
-          {/* Mobile Drawer Button */}
-          <div className="sm:hidden flex items-center">
+          {/* Mobile Menu */}
+          <div className="sm:hidden flex items-center space-x-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Globe className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  <span className={language === 'en' ? 'font-bold' : ''}>English</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('id')}>
+                  <span className={language === 'id' ? 'font-bold' : ''}>Indonesia</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Drawer open={open} onOpenChange={setOpen}>
               <DrawerTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -126,24 +166,24 @@ export default function Navigation() {
               </DrawerTrigger>
               <DrawerContent>
                 <DrawerHeader>
-                  <DrawerTitle>Menu</DrawerTitle>
+                  <DrawerTitle>{t('nav.menu')}</DrawerTitle>
                 </DrawerHeader>
                 <div className="px-4 py-2 flex flex-col space-y-4">
-                  <NavLink href="/" mobile onClick={() => setOpen(false)}>Home</NavLink>
-                  <NavLink href="/about" mobile onClick={() => setOpen(false)}>About</NavLink>
+                  <NavLink href="/" mobile onClick={() => setOpen(false)}>{t('nav.home')}</NavLink>
+                  <NavLink href="/about" mobile onClick={() => setOpen(false)}>{t('nav.about')}</NavLink>
                   <div className="px-3 py-2">
-                    <div className="font-medium text-gray-700">Services</div>
+                    <div className="font-medium text-gray-700">{t('nav.services.title')}</div>
                     <Link href="/training/public" className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" onClick={() => setOpen(false)}>
-                      Public Training
+                      {t('nav.services.publicTraining')}
                     </Link>
                     <Link href="/training/in-house" className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" onClick={() => setOpen(false)}>
-                      In-House Training
+                      {t('nav.services.inHouseTraining')}
                     </Link>
                   </div>
-                  <NavLink href="/contact" mobile onClick={() => setOpen(false)}>Contact</NavLink>
+                  <NavLink href="/contact" mobile onClick={() => setOpen(false)}>{t('nav.contact')}</NavLink>
                 </div>
                 <DrawerClose asChild>
-                  <Button className="my-4 mx-4" variant="outline">Close</Button>
+                  <Button className="my-4 mx-4" variant="outline">{t('nav.close')}</Button>
                 </DrawerClose>
               </DrawerContent>
             </Drawer>

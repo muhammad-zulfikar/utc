@@ -5,16 +5,14 @@ import { Button } from "@/components/ui/button";
 import FormModal from "@/app/components/FormModal";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
-const images = [
-  "/pexels.jpg",
-  "/pexels2.jpg",
-  "/pexels3.jpg",
-];
+const images = ["/pexels.jpg", "/pexels2.jpg", "/pexels3.jpg"];
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -42,19 +40,19 @@ export default function HeroSection() {
             <span className="block text-[#FFC000]">Smart People</span>
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            <strong>PT United Training Consulting</strong> provides comprehensive training and management consulting services since 2010, focusing on industry, technology, management aspects, HR development, and entrepreneurship.
+            {t('hero.description')}
           </p>
           <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
             <Button size="lg" onClick={() => setIsModalOpen(true)}>
-              Schedule Training
+              {t('hero.scheduleButton')}
             </Button>
             <FormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3">
-                <Link href="/training/public">
-                    <Button variant="outline" size="lg">
-                        View Programs
-                    </Button>
-                </Link>
+              <Link href="/training/public">
+                <Button variant="outline" size="lg">
+                  {t('hero.viewProgramsButton')}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
