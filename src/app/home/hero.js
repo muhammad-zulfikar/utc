@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
-const images = ["/pexels.jpg", "/pexels2.jpg", "/pexels3.jpg"];
+const images = ["/images/hero/hero-1.jpg", "/images/hero/hero-2.jpg", "/images/hero/hero-3.jpg"];
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -32,7 +32,7 @@ export default function HeroSection() {
           <Image src={image} alt={`Slide ${index + 1}`} fill className="object-cover" priority={index === 0} />
         </div>
       ))}
-      <div className="absolute inset-0 bg-black/60 z-[1]"></div>
+      <div className="absolute inset-0 bg-black/50 z-[1]"></div>
       <div className="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">

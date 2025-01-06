@@ -9,15 +9,20 @@ export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState('en')
 
   const t = (key) => {
-    const keys = key.split('.')
-    let value = i18n[language]
-    
-    for (const k of keys) {
-      if (value === undefined) return key
-      value = value[k]
+    try {
+      const keys = key.split('.')
+      let value = i18n[language]
+      
+      for (const k of keys) {
+        if (value === undefined) return key
+        value = value[k]
+      }
+      
+      return value || key
+    } catch (error) {
+      console.error(`Translation error for key: ${key}`, error)
+      return key
     }
-    
-    return value || key
   }
 
   return (

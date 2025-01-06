@@ -5,18 +5,21 @@ import services from "@/data/services";
 import { Button } from "@/components/ui/button";
 
 export default function ServicesSection() {
+  const serviceEntries = Object.entries(services);
+  
   return (
     <div className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Syllabus</h2>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Wide range of topics that provide solutions for modern enterprise challenges</p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+            Wide range of topics that provide solutions for modern enterprise challenges
+          </p>
         </div>
-
         <div className="mt-10">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(services).map(([key, service]) => (
-              <Card key={key} className="cursor-pointer">
+          <div className="flex flex-wrap justify-center gap-10">
+            {serviceEntries.map(([key, service]) => (
+              <Card key={key} className="cursor-pointer w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)] min-w-0">
                 <Drawer>
                   <DrawerTrigger asChild>
                     <CardHeader>

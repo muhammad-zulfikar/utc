@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, Globe } from 'lucide-react'
@@ -30,10 +30,36 @@ import { usePathname } from "next/navigation"
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const { language, setLanguage, t } = useLanguage()
 
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+      setLastScrollY(window.scrollY)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar)
+      return () => {
+        window.removeEventListener("scroll", controlNavbar)
+      }
+    }
+  }, [lastScrollY])
+
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav
+      className={`bg-white shadow-md sticky top-0 z-50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0 shadow-md" : "-translate-y-[110%]"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
@@ -44,38 +70,32 @@ export default function Navigation() {
             </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8 text-gray-700">
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-4 text-gray-700">
               <NavLink href="/">{t('nav.home')}</NavLink>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>{t('nav.profile.title')}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="ml-4">{t('nav.profile.title')}</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="w-[400px] p-4 md:w-[500px]">
+                      <div className="w-[400px] p-4 md:w-[500px] lg:w-[600px]">
                         <div className="grid gap-4">
                           <Link
                             href="/about"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
                             <div className="text-sm font-medium">{t('nav.profile.aboutUs')}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {t('nav.profile.aboutUsDesc')}
+                            </div>
                           </Link>
                           <Link
-                            href="/about"
+                            href="/partners-and-clients"
                             className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
                           >
-                            <div className="text-sm font-medium">{t('nav.profile.visionMission')}</div>
-                          </Link>
-                          <Link
-                            href="/about"
-                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
-                          >
-                            <div className="text-sm font-medium">{t('nav.profile.history')}</div>
-                          </Link>
-                          <Link
-                            href="/about"
-                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
-                          >
-                            <div className="text-sm font-medium">{t('nav.profile.structure')}</div>
+                            <div className="text-sm font-medium">{t('nav.profile.partnersAndClients')}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {t('nav.profile.partnersAndClientsDesc')}
+                            </div>
                           </Link>
                         </div>
                       </div>

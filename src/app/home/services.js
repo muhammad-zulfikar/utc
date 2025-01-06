@@ -12,26 +12,26 @@ const ServicesSection = () => {
 
   const services = [
     {
-      title: "Public Training Programs",
-      description: "Open enrollment courses designed for individuals and small teams. Join a diverse group of professionals in our structured learning environment with industry-leading instructors.",
+      title: t('services.publicTraining.title'),
+      description: t('services.publicTraining.description'),
       features: [
-        "Flexible scheduling options",
-        "Networking opportunities",
-        "Standardized curriculum",
-        "Certificate upon completion"
+        t('services.publicTraining.features.0'),
+        t('services.publicTraining.features.1'),
+        t('services.publicTraining.features.2'),
+        t('services.publicTraining.features.3')
       ],
       icon: <Users className="w-10 h-10 text-[#FFC000]" />,
       link: "/training/public",
       imageSrc: "/1.jpeg"
     },
     {
-      title: "In-House Training",
-      description: "Customized training solutions delivered exclusively to your organization. We adapt our content to address your specific challenges and business objectives.",
+      title: t('services.inHouseTraining.title'),
+      description: t('services.inHouseTraining.description'),
       features: [
-        "Tailored content delivery",
-        "Company-specific cases",
-        "On-site or virtual options",
-        "Team building focus"
+        t('services.inHouseTraining.features.0'),
+        t('services.inHouseTraining.features.1'),
+        t('services.inHouseTraining.features.2'),
+        t('services.inHouseTraining.features.3')
       ],
       icon: <Building2 className="w-10 h-10 text-[#FFC000]" />,
       link: "/training/in-house",
@@ -44,10 +44,10 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Training Services
+            {t('services.title')}
           </h2>
           <p className="mt-4 text-xl text-gray-600">
-            Choose the training format that best suits your needs
+            {t('services.subtitle')}
           </p>
         </div>
         
@@ -86,7 +86,7 @@ const ServicesSection = () => {
                     variant="default" 
                     className="w-full group"
                   >
-                    Learn More
+                    {t('services.learnMore')}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
