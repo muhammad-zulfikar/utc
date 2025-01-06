@@ -4,26 +4,11 @@ import { useState } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Input } from "@/components/ui/input"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuCheckboxItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Filter, Calendar, Users, Award, Clock } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
-
-const trainings = [
-  { name: "Leadership Development", duration: "2 days", level: "Advanced", price: "$1,500" },
-  { name: "Project Management", duration: "3 days", level: "Intermediate", price: "$2,000" },
-  { name: "Financial Management", duration: "2 days", level: "Beginner", price: "$1,200" },
-  { name: "Digital Marketing", duration: "2 days", level: "Intermediate", price: "$1,300" },
-  { name: "Data Analysis", duration: "3 days", level: "Advanced", price: "$2,200" },
-  { name: "Agile Methodologies", duration: "2 days", level: "Intermediate", price: "$1,400" },
-  { name: "Change Management", duration: "3 days", level: "Advanced", price: "$2,500" },
-  { name: "Business Analytics", duration: "2 days", level: "Intermediate", price: "$1,600" }
-]
+// Import CSV data directly
+import courseData from '@/data/course.csv'
 
 const benefits = [
   {
@@ -50,27 +35,18 @@ const benefits = [
 
 function PublicTraining() {
   const [search, setSearch] = useState("")
-  const [selectedLevels, setSelectedLevels] = useState([])
   const { t } = useLanguage()
 
-  const levels = ["Beginner", "Intermediate", "Advanced"]
-
-  const filteredTrainings = trainings.filter(training => {
-    const matchesSearch = training.name.toLowerCase().includes(search.toLowerCase())
-    const matchesLevel = selectedLevels.length === 0 || selectedLevels.includes(training.level)
-    return matchesSearch && matchesLevel
+  // Filter courses based on search
+  const filteredCourses = courseData.filter(course => {
+    if (!course || !course["Judul Pelatihan"]) return false
+    return course["Judul Pelatihan"].toLowerCase().includes(search.toLowerCase())
   })
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="relative h-80 bg-primary">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: `url('/api/placeholder/1200/400')`
-          }}
-        />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-4xl font-bold mb-4">Public Training Programs</h1>
@@ -108,53 +84,44 @@ function PublicTraining() {
             onChange={(e) => setSearch(e.target.value)}
             className="max-w-sm border-2 border-[#FFC000]"
           />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="border-2 border-[#FFC000]">
-                <Filter className="mr-2 h-4 w-4" />
-                Level
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {levels.map((level) => (
-                <DropdownMenuCheckboxItem
-                  key={level}
-                  checked={selectedLevels.includes(level)}
-                  onCheckedChange={(checked) => {
-                    setSelectedLevels(
-                      checked 
-                        ? [...selectedLevels, level]
-                        : selectedLevels.filter((l) => l !== level)
-                    )
-                  }}
-                >
-                  {level}
-                </DropdownMenuCheckboxItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
 
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Name</TableHead>
-              <TableHead>Duration</TableHead>
-              <TableHead>Level</TableHead>
-              <TableHead className="text-right">Price</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredTrainings.map((training) => (
-              <TableRow key={training.name}>
-                <TableCell className="font-medium">{training.name}</TableCell>
-                <TableCell>{training.duration}</TableCell>
-                <TableCell>{training.level}</TableCell>
-                <TableCell className="text-right">{training.price}</TableCell>
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="whitespace-nowrap">Training Title</TableHead>
+                <TableHead className="whitespace-nowrap">Duration</TableHead>
+                <TableHead className="whitespace-nowrap">Date</TableHead>
+                <TableHead className="whitespace-nowrap">Online Price</TableHead>
+                <TableHead className="whitespace-nowrap">Offline Price</TableHead>
+                <TableHead className="whitespace-nowrap">Location</TableHead>
+                <TableHead className="whitespace-nowrap">Contact Person</TableHead>
+                <TableHead className="whitespace-nowrap">Phone Number</TableHead>
+                <TableHead className="whitespace-nowrap">E-mail Address</TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {filteredCourses.map((course, index) => (
+                <TableRow key={index}>
+                  <TableCell className="font-medium whitespace-nowrap">{course["Judul Pelatihan"]}</TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {`${course["Jumlah Hari Pelatihan"]} (${course["Jumlah Jam Pelatihan Per Hari"]})`}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {`${course["tanggal awal"]} - ${course["tanggal akhir"]}`}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">{course["Biaya Pelatihan Online"]}</TableCell>
+                  <TableCell className="whitespace-nowrap">{course["Biaya Pelatihan Offline"]}</TableCell>
+                  <TableCell className="whitespace-nowrap">{course["Lokasi Pelatihan"]}</TableCell>
+                  <TableCell className="whitespace-nowrap">{course["Contact Person"]}</TableCell>
+                  <TableCell className="whitespace-nowrap">0{course["No Telepon/HP"]}</TableCell>
+                  <TableCell className="whitespace-nowrap">{course["Alamat Email"]}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
       </div>
 
       {/* CTA Section */}
