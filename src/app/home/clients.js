@@ -8,7 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 const ClientSection = () => {
   const { t } = useLanguage();
   const [scrollPosition, setScrollPosition] = useState(0);
-  
+
   const logos = [
     { src: "/images/mitra/pln.png", alt: "PLN" },
     { src: "/images/mitra/chevron.png", alt: "Chevron" },
@@ -19,21 +19,13 @@ const ClientSection = () => {
     { src: "/images/mitra/pertamina.png", alt: "Pertamina" },
     { src: "/images/mitra/pusri.png", alt: "PUSRI" },
     { src: "/images/mitra/bukit-asam.png", alt: "Bukit Asam" },
-    // Duplicate logos for infinite scroll
-    { src: "/images/mitra/pln.png", alt: "PLN" },
-    { src: "/images/mitra/chevron.png", alt: "Chevron" },
-    { src: "/images/mitra/semen-padang.png", alt: "Semen Padang" },
-    { src: "/images/mitra/krakatau-steel.png", alt: "Krakatau Steel" },
-    { src: "/images/mitra/pelindo.png", alt: "Pelindo" },
-    { src: "/images/mitra/mandiri.png", alt: "Mandiri" },
-    { src: "/images/mitra/pertamina.png", alt: "Pertamina" },
-    { src: "/images/mitra/pusri.png", alt: "PUSRI" },
-    { src: "/images/mitra/bukit-asam.png", alt: "Bukit Asam" },
+    { src: "/images/mitra/bogasari.png", alt: "Bogasari" },
+    { src: "/images/mitra/ahm.png", alt: "Astra Honda Motor" },
   ];
 
   useEffect(() => {
     const animationFrame = () => {
-      setScrollPosition(prev => (prev + 0.5) % (logos.length / 2 * 200));
+      setScrollPosition(prev => (prev + 0.5) % (logos.length * 200));
       requestAnimationFrame(animationFrame);
     };
 
@@ -42,7 +34,7 @@ const ClientSection = () => {
   }, []);
 
   return (
-    <div className="bg-white py-16">
+    <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -55,17 +47,33 @@ const ClientSection = () => {
 
         <Card className="overflow-hidden border-none shadow-none bg-transparent">
           <div className="relative h-32">
-            <div 
+            <div
               className="absolute flex items-center gap-8 transition-transform duration-100"
-              style={{ 
+              style={{
                 transform: `translateX(-${scrollPosition}px)`,
-                width: 'fit-content'
+                width: `${logos.length * 200}px`, // Ensure enough width for all logos
               }}
             >
+              {/* Map through logos and display each */}
               {logos.map((logo, index) => (
-                <div 
+                <div
                   key={index}
-                  className="flex-shrink-0 w-48 h-24 relative bg-white rounded-lg shadow-sm overflow-hidden"
+                  className="flex-shrink-0 w-48 h-24 relative overflow-hidden"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain p-2 transform hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+              ))}
+              {/* Repeat the logos for the seamless scrolling effect */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`repeat-${index}`}
+                  className="flex-shrink-0 w-48 h-24 relative overflow-hidden"
                 >
                   <Image
                     src={logo.src}

@@ -2,7 +2,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Accordion,
   AccordionContent,
@@ -88,14 +87,16 @@ function InHouseTraining() {
   const { t } = useLanguage()
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="relative overflow-hidden">
+      {/* Infinite Grid Background */}
+      <div className="absolute inset-0 z-[-1] bg-transparent">
+        <div className="absolute inset-0 bg-[length:50px_50px] bg-[linear-gradient(to_right,rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.1)_1px,transparent_1px)] animate-scroll-grid"></div>
+      </div>
+
       {/* Hero Section */}
       <div className="relative h-80 bg-primary">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: `url('/api/placeholder/1200/400')`
-          }}
         />
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-4">
@@ -121,38 +122,6 @@ function InHouseTraining() {
               </CardHeader>
             </Card>
           ))}
-        </div>
-      </div>
-
-      {/* Training Areas Section */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Training Areas</h2>
-          <Tabs defaultValue={areas[0].title.toLowerCase()} className="max-w-3xl mx-auto">
-            <TabsList className="grid grid-cols-3 mb-8">
-              {areas.map((area) => (
-                <TabsTrigger key={area.title} value={area.title.toLowerCase()}>
-                  {area.title}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            {areas.map((area) => (
-              <TabsContent key={area.title} value={area.title.toLowerCase()}>
-                <Card>
-                  <CardContent className="pt-6">
-                    <ul className="grid md:grid-cols-2 gap-4">
-                      {area.topics.map((topic, index) => (
-                        <li key={index} className="flex items-center">
-                          <CheckCircle2 className="w-5 h-5 text-[#FFC000] mr-2" />
-                          {topic}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            ))}
-          </Tabs>
         </div>
       </div>
 

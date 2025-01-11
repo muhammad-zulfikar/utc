@@ -25,7 +25,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="relative overflow-hidden">
+      {/* Infinite Grid Background */}
+      <div className="absolute inset-0 z-[-1] bg-transparent">
+        <div className="absolute inset-0 bg-[length:50px_50px] bg-[linear-gradient(to_right,rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.1)_1px,transparent_1px)] animate-scroll-grid"></div>
+      </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
         {/* Hero Section */}
         <div className="text-center mb-16">

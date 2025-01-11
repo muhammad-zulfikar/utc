@@ -97,6 +97,15 @@ export default function Navigation() {
                               {t('nav.profile.partnersAndClientsDesc')}
                             </div>
                           </Link>
+                          <Link
+                            href="/gallery"
+                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-gray-50"
+                          >
+                            <div className="text-sm font-medium">{t('nav.profile.gallery')}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {t('nav.profile.galleryDesc')}
+                            </div>
+                          </Link>
                         </div>
                       </div>
                     </NavigationMenuContent>

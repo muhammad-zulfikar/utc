@@ -50,7 +50,7 @@ export default function HeroSection() {
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3">
               <Link href="/training/public">
                 <Button variant="outline" size="lg">
-                  {t('hero.viewProgramsButton')}
+                  {t('hero.downloadBrochureButton')}
                 </Button>
               </Link>
             </div>

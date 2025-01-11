@@ -8,7 +8,9 @@ export const id = {
       aboutUs: "Tentang Kami",
       aboutUsDesc: "Pelajari sejarah, visi, misi dan struktur organisasi kami",
       partnersAndClients: "Mitra & Klien",
-      partnersAndClientsDesc: "Lihat jaringan mitra dan klien tepercaya kami yang terus berkembang"
+      partnersAndClientsDesc: "Lihat jaringan mitra dan klien tepercaya kami yang terus berkembang",
+      gallery: "Galeri",
+      galleryDesc: "Jelajahi koleksi momen-momen berkesan kami",
     },
     services: {
       title: "Layanan",
@@ -26,7 +28,7 @@ export const id = {
     title2: "SDM Cerdas",
     description: "PT United Training Consulting menyediakan layanan pelatihan dan konsultasi manajemen yang komprehensif sejak 2010, berfokus pada industri, teknologi, aspek manajemen, pengembangan SDM, dan kewirausahaan.",
     scheduleButton: "Jadwalkan Pelatihan",
-    viewProgramsButton: "Lihat Program"
+    downloadBrochureButton: "Unduh Brosur"
   },
   services: {
     title: "Layanan Pelatihan",

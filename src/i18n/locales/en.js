@@ -8,7 +8,9 @@ export const en = {
       aboutUs: "About Us",
       aboutUsDesc: "Discover our history, vision, mission and organizational structure",
       partnersAndClients: "Partners & Clients",
-      partnersAndClientsDesc: "View our growing network of trusted partners and clients"
+      partnersAndClientsDesc: "View our growing network of trusted partners and clients",
+      gallery: "Gallery",
+      galleryDesc: "Explore our collection of memorable moments",
     },
     services: {
       title: "Services",
@@ -26,10 +28,10 @@ export const en = {
     title2: "Smart People",
     description: "PT United Training Consulting provides comprehensive training and management consulting services since 2010, focusing on industry, technology, management aspects, HR development, and entrepreneurship.",
     scheduleButton: "Schedule Training",
-    viewProgramsButton: "View Programs"
+    downloadBrochureButton: "Download Brochure"
   },
   services: {
-    title: "Training Services",
+    title: "Discover Our Training Services",
     subtitle: "Choose the training format that best suits your needs",
     publicTraining: {
       title: "Public Training",
