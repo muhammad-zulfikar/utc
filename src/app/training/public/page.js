@@ -179,7 +179,7 @@ function PublicTraining() {
 
         {/* Pagination Controls */}
         <div className="flex items-center justify-between mt-6 text-sm text-gray-600">
-          <div className="flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-2">
             <p>Rows per page:</p>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -206,6 +206,7 @@ function PublicTraining() {
 
           <div className="flex items-center space-x-2">
             <Button
+              className="hidden md:flex"
               variant="outline"
               onClick={handleFirstPage}
               disabled={currentPage === 1}
@@ -227,6 +228,7 @@ function PublicTraining() {
               <ChevronRight className="w-4 h-4" />
             </Button>
             <Button
+              className="hidden md:flex"
               variant="outline"
               onClick={handleLastPage}
               disabled={currentPage === totalPages}

@@ -7,7 +7,7 @@ import { LanguageProvider } from '@/context/LanguageContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'United Training Consulting | Enterprise Technology Consulting',
+  title: 'United Training Consulting',
   description: 'Expert technology consulting for banks, tech companies, and enterprise industries',
 }
 
