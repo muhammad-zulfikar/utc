@@ -31,7 +31,7 @@ export const id = {
     downloadBrochureButton: "Unduh Brosur"
   },
   services: {
-    title: "Layanan Pelatihan",
+    title: "Telusuri Layanan Training Kami",
     subtitle: "Pilih format pelatihan yang paling sesuai dengan kebutuhan Anda",
     publicTraining: {
       title: "Pelatihan Publik",
@@ -57,7 +57,18 @@ export const id = {
   },
   clients: {
     title: "Dipercaya oleh Pemimpin Industri",
-    subtitle: "Kami bangga bekerja sama dengan organisasi luar biasa ini."
+    subtitle: "Kami bangga bekerja sama dengan organisasi luar biasa ini.",
+    stats: {
+      totalClients: "Total Klien",
+      yearsExperience: "Tahun Pengalaman",
+      industries: "Industri"
+    },
+    categories: {
+      all: "Semua",
+      energy: "Energi",
+      manufacturing: "Manufaktur",
+      mining: "Pertambangan"
+    }
   },
   faq: {
     title: "Pertanyaan yang Sering Diajukan",
@@ -80,7 +91,8 @@ export const id = {
     title1: "Siap mengembangkan tim Anda?",
     title2: "Mulai perjalanan pelatihan Anda hari ini.",
     description: "Para ahli kami siap membantu Anda menavigasi dunia pengembangan profesional dan pelatihan yang kompleks.",
-    contactButton: "Hubungi Kami"
+    scheduleButton: "Jadwalkan Pelatihan",
+    downloadBrochureButton: "Unduh Brosur"
   },
   footer: {
     companyName: "United Training Consultant",

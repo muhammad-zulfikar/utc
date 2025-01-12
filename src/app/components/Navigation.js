@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, Globe, ChevronDown } from 'lucide-react'
+import { Menu, ChevronDown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import {
   DropdownMenu,
@@ -15,8 +15,10 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import {
   Drawer,
@@ -26,40 +28,56 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { usePathname } from "next/navigation"
+import { Home, User, Users, Image, Book, Briefcase, Mail } from 'lucide-react';
 
 // Language Selector Component
-const LanguageSelector = ({ language, setLanguage }) => (
-  <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button variant="outline" size="icon">
-        <Globe className="h-4 w-4" />
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
-      <DropdownMenuItem onClick={() => setLanguage('en')} className="flex items-center space-x-2">
-        <span>🇬🇧</span>
-        <span className={language === 'en' ? 'font-bold' : ''}>English</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem onClick={() => setLanguage('id')} className="flex items-center space-x-2">
-        <span>🇮🇩</span>
-        <span className={language === 'id' ? 'font-bold' : ''}>Indonesia</span>
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
-)
+const LanguageSelector = ({ language, setLanguage }) => {
+  const languageFlags = {
+    id: '🇮🇩',
+    en: '🇬🇧',
+  };
 
-const CollapsibleSection = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <span className="text-md">{languageFlags[language]}</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem
+          onClick={() => setLanguage('id')}
+          className="flex items-center space-x-2"
+        >
+          <span>🇮🇩</span>
+          <span className={language === 'id' ? 'font-bold' : ''}>Indonesia</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setLanguage('en')}
+          className="flex items-center space-x-2"
+        >
+          <span>🇬🇧</span>
+          <span className={language === 'en' ? 'font-bold' : ''}>English</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+
+const CollapsibleSection = ({ title, children, icon }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-3 py-2 flex justify-between items-center"
+        className="w-full px-3 py-2 flex justify-between items-center text-gray-600 hover:text-gray-900"
       >
-        <span className="font-medium text-gray-700">{title}</span>
-        <ChevronDown 
+        <div className="flex items-center space-x-2">
+          {icon && React.cloneElement(icon, { className: 'w-5 h-5' })}
+          <span className="font-medium">{title}</span>
+        </div>
+        <ChevronDown
           className={`w-4 h-4 transition-transform duration-200 ${
             isOpen ? 'transform rotate-180' : ''
           }`}
@@ -73,8 +91,8 @@ const CollapsibleSection = ({ title, children }) => {
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
@@ -111,17 +129,25 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
+
+            {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="text-2xl font-bold text-indigo-700">
-                <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+                <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
               </Link>
             </div>
 
             {/* Desktop Navigation Links */}
             <div className="hidden sm:ml-6 sm:flex sm:space-x-4 text-gray-700">
-              <NavLink href="/">{t('nav.home')}</NavLink>
               <NavigationMenu>
                 <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <Link href="/" legacyBehavior passHref>
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        {t('nav.home')}
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="ml-4">{t('nav.profile.title')}</NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -185,9 +211,15 @@ export default function Navigation() {
                       </div>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/contact" legacyBehavior passHref>
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        {t('nav.contact')}
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <NavLink href="/contact">{t('nav.contact')}</NavLink>
             </div>
           </div>
 
@@ -212,50 +244,63 @@ export default function Navigation() {
                   <DrawerTitle>{t('nav.menu')}</DrawerTitle>
                 </DrawerHeader>
                 <div className="px-4 py-2 flex flex-col space-y-1">
-                  <NavLink href="/" mobile onClick={() => setOpen(false)}>{t('nav.home')}</NavLink>
-                  
-                  <CollapsibleSection title={t('nav.profile.title')}>
+                  <Link 
+                    href="/" 
+                    onClick={() => setOpen(false)}
+                    className="px-3 py-2 font-medium text-gray-600 hover:text-gray-900 flex items-center space-x-2"
+                  >
+                    <Home className="w-5 h-5" />
+                    <span>{t('nav.home')}</span>
+                  </Link>
+
+                  <CollapsibleSection title={t('nav.profile.title')} icon={<User />}>
                     <Link href="/about" 
-                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" 
+                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center" 
                       onClick={() => setOpen(false)}
                     >
-                      <span className="inline-block w-2 h-2 mt-2 mr-2 bg-primary rounded-full"></span>
-                      {t('nav.profile.aboutUs')}
+                      <User className="w-5 h-5 mr-2" />
+                      <span>{t('nav.profile.aboutUs')}</span>
                     </Link>
                     <Link href="/partners-and-clients" 
-                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" 
+                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center" 
                       onClick={() => setOpen(false)}
                     >
-                      <span className="inline-block w-2 h-2 mt-2 mr-2 bg-primary rounded-full"></span>
-                      {t('nav.profile.partnersAndClients')}
+                      <Users className="w-5 h-5 mr-2" />
+                      <span>{t('nav.profile.partnersAndClients')}</span>
                     </Link>
                     <Link href="/gallery" 
-                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" 
+                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center" 
                       onClick={() => setOpen(false)}
                     >
-                      <span className="inline-block w-2 h-2 mt-2 mr-2 bg-primary rounded-full"></span>
-                      {t('nav.profile.gallery')}
+                      <Image className="w-5 h-5 mr-2" />
+                      <span>{t('nav.profile.gallery')}</span>
                     </Link>
                   </CollapsibleSection>
 
-                  <CollapsibleSection title={t('nav.services.title')}>
+                  <CollapsibleSection title={t('nav.services.title')} icon={<Briefcase />}>
                     <Link href="/training/public" 
-                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" 
+                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center" 
                       onClick={() => setOpen(false)}
                     >
-                      <span className="inline-block w-2 h-2 mt-2 mr-2 bg-primary rounded-full"></span>
-                      {t('nav.services.publicTraining')}
+                      <Book className="w-5 h-5 mr-2" />
+                      <span>{t('nav.services.publicTraining')}</span>
                     </Link>
                     <Link href="/training/in-house" 
-                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900" 
+                      className="block pl-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center" 
                       onClick={() => setOpen(false)}
                     >
-                      <span className="inline-block w-2 h-2 mt-2 mr-2 bg-primary rounded-full"></span>
-                      {t('nav.services.inHouseTraining')}
+                      <Briefcase className="w-5 h-5 mr-2" />
+                      <span>{t('nav.services.inHouseTraining')}</span>
                     </Link>
                   </CollapsibleSection>
 
-                  <NavLink href="/contact" mobile onClick={() => setOpen(false)}>{t('nav.contact')}</NavLink>
+                  <Link 
+                    href="/contact" 
+                    className="px-3 py-2 font-medium text-gray-600 hover:text-gray-900 flex items-center space-x-2"
+                  >
+                    <Mail className="w-5 h-5" />
+                    <span>{t('nav.contact')}</span>
+                  </Link>
                 </div>
                 <DrawerClose asChild>
                   <Button className="my-4 mx-4" variant="outline">{t('nav.close')}</Button>
@@ -263,30 +308,9 @@ export default function Navigation() {
               </DrawerContent>
             </Drawer>
           </div>
+
         </div>
       </div>
     </nav>
-  )
-}
-
-function NavLink({ href, children, mobile = false, onClick }) {
-  const pathname = usePathname()
-  const isActive = pathname === href
-
-  return (
-    <Link
-      href={href}
-      className={`${
-        mobile
-          ? 'block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 group'
-          : 'text-gray-700 px-3 py-2 rounded-md text-sm font-medium relative group'
-      }`}
-      onClick={onClick}
-    >
-      {children}
-      <span
-        className={`absolute left-0 bottom-0 h-0.5 bg-black transition-all duration-300 ${isActive ? 'w-full' : 'w-0'} group-hover:w-full`}
-      />
-    </Link>
   )
 }

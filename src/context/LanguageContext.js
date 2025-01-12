@@ -6,7 +6,7 @@ import { i18n } from '@/i18n'
 const LanguageContext = createContext()
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState('id')
 
   const t = (key) => {
     try {

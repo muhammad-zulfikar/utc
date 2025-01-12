@@ -16,8 +16,8 @@ export default function Home() {
       <ClientSection />
       <ServicesSection />
       <SyllabusSection />
-      <FaqSection />
       <CtaSection />
+      <FaqSection />
     </div>
   );
 }

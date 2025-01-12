@@ -11,6 +11,7 @@ const images = [
   "/images/hero/hero-1.jpg",
   "/images/hero/hero-2.jpg",
   "/images/hero/hero-3.jpg",
+  "/images/hero/hero-4.jpeg",
 ];
 
 export default function HeroSection() {
@@ -54,10 +55,11 @@ export default function HeroSection() {
           {t('hero.description')}
         </p>
 
-        <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center sm:space-x-4">
+        <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center sm:space-x-4 gap-2">
           <Button
+            variant="default"
             size="lg"
-            className="bg-[#FFC000] text-white hover:bg-[#e6a800] focus:ring-[#FFC000] focus:ring-offset-gray-900"
+            className="shadow-md transition transform hover:scale-105"
             onClick={() => setIsModalOpen(true)}
           >
             {t("hero.scheduleButton")}
@@ -69,7 +71,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="border-white hover:bg-white"
+              className="shadow-md transition transform hover:scale-105"
             >
               {t("hero.downloadBrochureButton")}
             </Button>

@@ -10,17 +10,21 @@ const ClientSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const logos = [
-    { src: "/images/mitra/pln.png", alt: "PLN" },
-    { src: "/images/mitra/chevron.png", alt: "Chevron" },
-    { src: "/images/mitra/semen-padang.png", alt: "Semen Padang" },
-    { src: "/images/mitra/krakatau-steel.png", alt: "Krakatau Steel" },
-    { src: "/images/mitra/pelindo.png", alt: "Pelindo" },
-    { src: "/images/mitra/mandiri.png", alt: "Mandiri" },
-    { src: "/images/mitra/pertamina.png", alt: "Pertamina" },
-    { src: "/images/mitra/pusri.png", alt: "PUSRI" },
-    { src: "/images/mitra/bukit-asam.png", alt: "Bukit Asam" },
-    { src: "/images/mitra/bogasari.png", alt: "Bogasari" },
-    { src: "/images/mitra/ahm.png", alt: "Astra Honda Motor" },
+    { src: "/images/clients/pln.png", alt: "PLN" },
+    { src: "/images/clients/chevron.png", alt: "Chevron" },
+    { src: "/images/clients/semen-padang.png", alt: "Semen Padang" },
+    { src: "/images/clients/krakatau-steel.png", alt: "Krakatau Steel" },
+    { src: "/images/clients/pelindo.png", alt: "Pelindo" },
+    { src: "/images/clients/mandiri.png", alt: "Mandiri" },
+    { src: "/images/clients/pertamina.png", alt: "Pertamina" },
+    { src: "/images/clients/pusri.png", alt: "PUSRI" },
+    { src: "/images/clients/bukit-asam.png", alt: "Bukit Asam" },
+    { src: "/images/clients/bogasari.png", alt: "Bogasari" },
+    { src: "/images/clients/ahm.png", alt: "Astra Honda Motor" },
+    { src: "/images/clients/nhm.png", alt: "Nusa Halmahera Mineral" },
+    { src: "/images/clients/ytlpower.png", alt: "YTL Power" },
+    { src: "/images/clients/mitsuba.png", alt: "Mitsuba Indonesia" },
+    { src: "/images/clients/lbe.png", alt: "Lestari Banten Energi" },
   ];
 
   useEffect(() => {
@@ -51,10 +55,9 @@ const ClientSection = () => {
               className="absolute flex items-center gap-4 sm:gap-8 transition-transform duration-100"
               style={{
                 transform: `translateX(-${scrollPosition}px)`,
-                width: `${logos.length * 160}px`, // Adjust width for seamless scrolling
+                width: `${logos.length * 160}px`,
               }}
             >
-              {/* Map through logos and display each */}
               {logos.map((logo, index) => (
                 <div
                   key={index}
@@ -69,7 +72,6 @@ const ClientSection = () => {
                   />
                 </div>
               ))}
-              {/* Repeat the logos for the seamless scrolling effect */}
               {logos.map((logo, index) => (
                 <div
                   key={`repeat-${index}`}

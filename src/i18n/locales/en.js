@@ -57,7 +57,18 @@ export const en = {
   },
   clients: {
     title: "Trusted by Industry Leaders",
-    subtitle: "We're proud to work with these amazing organizations."
+    subtitle: "We're proud to work with these amazing organizations.",
+    stats: {
+      totalClients: "Total Clients",
+      yearsExperience: "Years Experience",
+      industries: "Industries"
+    },
+    categories: {
+      all: "All",
+      energy: "Energy",
+      manufacturing: "Manufacturing",
+      mining: "Mining"
+    }
   },
   faq: {
     title: "Frequently Asked Questions",
@@ -80,7 +91,8 @@ export const en = {
     title1: "Ready to develop your team?",
     title2: "Start your training journey today.",
     description: "Our experts are ready to help you navigate the complex world of professional development and training.",
-    contactButton: "Contact Us"
+    scheduleButton: "Schedule Training",
+    downloadBrochureButton: "Download Brochure"
   },
   footer: {
     companyName: "United Training Consultant",

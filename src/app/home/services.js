@@ -22,7 +22,7 @@ const ServicesSection = () => {
       ],
       icon: <Users className="w-10 h-10 text-[#FFC000]" />,
       link: "/training/public",
-      imageSrc: "/1.jpeg"
+      imageSrc: "/images/1.jpeg"
     },
     {
       title: t('services.inHouseTraining.title'),
@@ -35,7 +35,7 @@ const ServicesSection = () => {
       ],
       icon: <Building2 className="w-10 h-10 text-[#FFC000]" />,
       link: "/training/in-house",
-      imageSrc: "/2.jpeg"
+      imageSrc: "/images/2.jpeg"
     }
   ];
 
@@ -44,7 +44,9 @@ const ServicesSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Discover Our <span className="text-[hsl(48,77%,52%)]">Training</span> Services
+            {t('services.title').split('Training')[0]}
+            <span className="text-primary">Training</span>
+            {t('services.title').split('Training')[1]}
           </h2>
           <p className="mt-4 text-xl text-gray-600">
             {t('services.subtitle')}
