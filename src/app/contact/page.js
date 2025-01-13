@@ -157,18 +157,18 @@ export default function Contact() {
                 <CardDescription>
                   <li>
                     <a
-                      href="https://wa.me/+622129613810"
-                      className="text-[#FFC000]"
+                      href="https://wa.me/+628212836526"
+                      className='hover:underline'
                     >
-                      +62 21 29613810
+                      +62 821 2283 6526 (Gunawan)
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://wa.me/+622129613810"
-                      className="text-[#FFC000]"
+                      href="https://wa.me/+6281318517205"
+                      className='hover:underline'
                     >
-                      +62 21 29613810
+                      +62 813 1851 7205 (Mimie)
                     </a>
                   </li>
                 </CardDescription>
@@ -182,7 +182,7 @@ export default function Contact() {
                 <CardDescription>
                   <a
                     href="gunawan@united-trainingdevelopment.com"
-                    className="text-[#FFC000] dark:text-indigo-400 hover:underline"
+                    className="hover:underline"
                   >
                     gunawan@united-trainingdevelopment.com
                   </a>

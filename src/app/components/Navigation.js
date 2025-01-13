@@ -146,7 +146,8 @@ export default function Navigation() {
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
-                  className="h-10 w-auto"
+                  width={40}
+                  height={40}
                 />
               </Link>
             </div>

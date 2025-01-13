@@ -60,6 +60,32 @@ export const id = {
     },
     learnMore: 'Pelajari Lebih Lanjut',
   },
+  syllabus: {
+    title: "Jelajahi Silabus Kami",
+    subtitle: "Pilihan topik yang dikurasi untuk mengatasi tantangan perusahaan modern dan menginspirasi inovasi.",
+    categories: {
+      miningElectrical: {
+        title: "Pertambangan, Kelistrikan & Produksi",
+        description: "Pelatihan teknis untuk operasi industri"
+      },
+      operations: {
+        title: "Operasi & Pemeliharaan",
+        description: "Pelatihan komprehensif pemeliharaan dan operasional"
+      },
+      finance: {
+        title: "Keuangan, Akuntansi & Logistik",
+        description: "Pelatihan manajemen keuangan dan operasional"
+      },
+      management: {
+        title: "Manajemen, Sekretaris, Administrasi & Humas",
+        description: "Kepemimpinan dan pengembangan organisasi"
+      },
+      safety: {
+        title: "Kesehatan, Keselamatan & Lingkungan",
+        description: "Keselamatan kerja dan manajemen lingkungan"
+      }
+    }
+  },
   clients: {
     title: 'Dipercaya oleh Pemimpin Industri',
     subtitle: 'Kami bangga bekerja sama dengan organisasi luar biasa ini.',
@@ -103,9 +129,113 @@ export const id = {
     scheduleButton: 'Jadwalkan Pelatihan',
     downloadBrochureButton: 'Unduh Brosur',
   },
+  about: {
+    title: 'Tentang Kami',
+    description: 'Pelajari siapa kami, apa yang kami perjuangkan, dan bagaimana kami unggul dalam pelatihan dan konsultasi.',
+    hero: {
+      title: 'United Training Consulting',
+      subtitle: 'Pelatihan Profesional dan Konsultasi Manajemen Sejak 2010',
+    },
+    stats: {
+      trainingSessions: '520+ Sesi Pelatihan',
+      uniqueTopics: '235+ Topik',
+      participants: '1.550+ Peserta',
+    },
+    vision: {
+      title: 'Visi',
+      description:
+        'Menjadi Mitra Utama dalam Pengembangan Sumber Daya Manusia yang komprehensif dan terintegrasi melalui penciptaan nilai-nilai institusi profesional, khususnya di bidang Human Capital dan Hubungan Industrial.',
+    },
+    mission: {
+      title: 'Misi',
+      points: [
+        'Menyediakan layanan pelatihan dengan mengutamakan kepuasan pelanggan sambil mematuhi prinsip dan etika bisnis profesional.',
+        'Menciptakan nilai tambah melalui pelatihan terkini dan instruktur yang kompeten.',
+        'Membantu dan memfasilitasi mitra/klien untuk mencapai keunggulan bisnis.',
+        'Membantu memaksimalkan kapasitas sumber daya manusia mitra.',
+      ],
+    },
+    coreValues: {
+      title: 'Nilai Inti',
+      values: [
+        {
+          title: 'Keunggulan Profesional',
+          description: 'Menjaga standar tertinggi dalam semua layanan kami.',
+        },
+        {
+          title: 'Berfokus pada Klien',
+          description: 'Berorientasi pada nilai dan kepuasan.',
+        },
+        {
+          title: 'Pertumbuhan Kolaboratif',
+          description: 'Membangun kemitraan yang kuat untuk kesuksesan bersama.',
+        },
+        {
+          title: 'Inovasi Berkelanjutan',
+          description: 'Selalu terdepan dengan solusi modern.',
+        },
+      ],
+    },
+    whyChooseUs: {
+      title: 'Mengapa Memilih UTC',
+      description: 'Keunggulan dalam Pengembangan Profesional',
+      features: [
+        {
+          title: 'Instruktur Ahli',
+          description: 'Profesional berkualifikasi tinggi dengan pengalaman industri yang luas.',
+        },
+        {
+          title: 'Rekam Jejak Terbukti',
+          description: 'Berhasil menyelenggarakan ratusan program pelatihan.',
+        },
+        {
+          title: 'Kemitraan Industri',
+          description: 'Koneksi kuat dengan organisasi terkemuka.',
+        },
+        {
+          title: 'Solusi Kustom',
+          description: 'Program yang disesuaikan dengan kebutuhan spesifik.',
+        },
+        {
+          title: 'Jaminan Kualitas',
+          description: 'Standar ketat untuk semua program.',
+        },
+        {
+          title: 'Jadwal Fleksibel',
+          description: 'Program yang dirancang untuk menyesuaikan jadwal Anda.',
+        },
+      ],
+    },
+    strategicApproach: {
+      title: 'Pendekatan Strategis',
+      description: 'Membangun Keunggulan Melalui Kemitraan',
+      strategies: [
+        {
+          title: 'Pengembangan Kemitraan',
+          description:
+            'Membangun hubungan yang kuat dan saling menguntungkan dengan perusahaan dan institusi.',
+        },
+        {
+          title: 'Jaminan Kualitas',
+          description: 'Peningkatan berkelanjutan dalam materi pelatihan dan metode penyampaian.',
+        },
+        {
+          title: 'Fokus Inovasi',
+          description: 'Selalu berada di garis depan tren dan metodologi industri.',
+        },
+        {
+          title: 'Keberhasilan Klien',
+          description: 'Berkomitmen untuk mencapai hasil yang terukur dan pertumbuhan jangka panjang.',
+        },
+      ],
+    },
+  },
   footer: {
     companyName: 'United Training Consultant',
     description: 'Layanan konsultasi dan pelatihan profesional sejak 2010.',
+    about: 'Tentang',
+    services: 'Layanan',
+    contact: 'Kontak',
     copyright:
       '© 2025 United Training Consulting. Hak cipta dilindungi undang-undang.',
   },

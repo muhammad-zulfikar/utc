@@ -10,8 +10,7 @@ export default function Footer() {
 
   const quickLinks = [
     { name: t('footer.about'), href: '/about' },
-    { name: t('footer.services'), href: '/services' },
-    { name: t('footer.careers'), href: '/careers' },
+    { name: t('footer.services'), href: '/training' },
     { name: t('footer.contact'), href: '/contact' },
   ];
 
@@ -29,14 +28,16 @@ export default function Footer() {
 
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Company Info */}
           <div className="space-y-8">
             <div className="flex items-center space-x-4 justify-center md:justify-start">
               <Image
                 src="/images/logo.png"
                 alt="Logo"
-                className="h-12 w-auto object-contain"
+                width={56}
+                height={56}
+                className="object-contain"
               />
               <Link
                 href="/"
@@ -93,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="text-center md:text-left">
+          {/* <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
             <p className="text-gray-400 mb-4">
               Stay updated with our latest news and updates.
@@ -111,7 +112,7 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Bar */}
