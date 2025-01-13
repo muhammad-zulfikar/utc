@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Menu, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import FormModal from '@/app/components/FormModal';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -110,6 +111,7 @@ export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { language, setLanguage, t } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
@@ -259,7 +261,16 @@ export default function Navigation() {
           {/* Language Selector and Consultation Button */}
           <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
             <LanguageSelector language={language} setLanguage={setLanguage} />
-            <Button variant="default">{t('nav.consultation')}</Button>
+            <Button 
+              variant="default"
+              onClick={() => setIsModalOpen(true)}
+            >
+              {t('nav.consultation')}
+            </Button>
+            <FormModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
           </div>
 
           {/* Mobile Menu */}

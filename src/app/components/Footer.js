@@ -8,11 +8,30 @@ import { MapPin, Phone, Clock } from 'lucide-react';
 export default function Footer() {
   const { t } = useLanguage();
 
-  const quickLinks = [
-    { name: t('footer.about'), href: '/about' },
-    { name: t('footer.services'), href: '/training' },
-    { name: t('footer.contact'), href: '/contact' },
-  ];
+  const quickLinks = {
+    profile: {
+      title: t('nav.profile.title'),
+      links: [
+        { name: t('nav.profile.aboutUs'), href: '/about' },
+        { name: t('nav.profile.partnersAndClients'), href: '/partners-and-clients' },
+        { name: t('nav.profile.gallery'), href: '/gallery' },
+      ]
+    },
+    services: {
+      title: t('nav.services.title'),
+      links: [
+        { name: t('nav.services.publicTraining'), href: '/training/public' },
+        { name: t('nav.services.inHouseTraining'), href: '/training/in-house' },
+      ]
+    },
+    other: {
+      title: t('footer.quickLinks'),
+      links: [
+        { name: t('nav.home'), href: '/' },
+        { name: t('nav.contact'), href: '/contact' },
+      ]
+    }
+  };
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
@@ -28,7 +47,7 @@ export default function Footer() {
 
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-8">
             <div className="flex items-center space-x-4 justify-center md:justify-start">
@@ -51,74 +70,45 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-4">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-center md:justify-start space-x-3">
-                <MapPin className="w-5 h-5 text-gray-400" />
-                <p className="text-gray-400">
-                  Gedung ASCOM, Lt.2
-                  <br />
-                  Jl. Matraman Raya No.67
-                  <br />
-                  Jakarta Timur 13140
-                </p>
-              </div>
-              <div className="flex items-center justify-center md:justify-start space-x-3">
-                <Phone className="w-5 h-5 text-gray-400" />
-                <p className="text-gray-400">+62 21 1234 5678</p>
-              </div>
-              <div className="flex items-center justify-center md:justify-start space-x-3">
-                <Clock className="w-5 h-5 text-gray-400" />
-                <p className="text-gray-400">Mon - Fri: 9:00 - 18:00</p>
-              </div>
+          {/* Quick Links - Split into 2 columns */}
+          {Object.values(quickLinks).map((section) => (
+            <div key={section.title} className="text-center md:text-left">
+              <h3 className="text-lg font-semibold mb-6">{section.title}</h3>
+              <ul className="space-y-4">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 ease-in-out"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Newsletter */}
-          {/* <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-400 mb-4">
-              Stay updated with our latest news and updates.
-            </p>
-            <form className="space-y-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors"
-              />
-              <button
-                type="submit"
-                className="w-full px-6 py-2 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div> */}
+        <div className="flex flex-col md:flex-row md:space-x-6 mt-12 space-y-4 md:space-y-0 items-center md:items-start justify-center text-center md:text-left">
+          <div className="flex items-center space-x-3">
+            <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            <p className="text-gray-400">{t('footer.address')}</p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            <p className="text-gray-400">+62 821 2283 6526 (Gunawan)</p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            <p className="text-gray-400">+62 813 1851 7205 (Mimie)</p>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400">{t('footer.copyright')}</p>
+        <div className="mt-12 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 mt-8">
+            <p className="hidden md:flex text-gray-400 text-center">{t('footer.copyright')}</p>
             <div className="flex space-x-6">
               <a
                 href="https://instagram.com"
@@ -175,6 +165,7 @@ export default function Footer() {
                 />
               </a>
             </div>
+            <p className="md:hidden text-gray-400 text-center">{t('footer.copyright')}</p>
           </div>
         </div>
       </div>

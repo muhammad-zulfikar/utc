@@ -25,109 +25,195 @@ export const id = {
     menu: 'Menu',
     close: 'Tutup',
   },
-  hero: {
-    title1: 'Pendidikan Cerdas',
-    title2: 'SDM Cerdas',
-    description:
-      'PT United Training Consulting menyediakan layanan pelatihan dan konsultasi manajemen yang komprehensif sejak 2010, berfokus pada industri, teknologi, aspek manajemen, pengembangan SDM, dan kewirausahaan.',
-    scheduleButton: 'Jadwalkan Pelatihan',
-    downloadBrochureButton: 'Unduh Brosur',
+  home: {
+    hero: {
+      title1: 'Pendidikan Cerdas',
+      title2: 'SDM Cerdas',
+      description:
+        'PT United Training Consulting menyediakan layanan pelatihan dan konsultasi manajemen yang komprehensif sejak 2010, berfokus pada industri, teknologi, aspek manajemen, pengembangan SDM, dan kewirausahaan.',
+      scheduleButton: 'Jadwalkan Pelatihan',
+      downloadBrochureButton: 'Unduh Brosur',
+    },
+    services: {
+      title: 'Telusuri Layanan Training Kami',
+      subtitle: 'Pilih format pelatihan yang paling sesuai dengan kebutuhan Anda',
+      publicTraining: {
+        title: 'Pelatihan Publik',
+        description:
+          'Kursus pendaftaran terbuka yang dirancang untuk individu dan tim kecil. Bergabunglah dengan kelompok profesional beragam dalam lingkungan pembelajaran terstruktur kami dengan instruktur terkemuka.',
+        features: [
+          'Opsi penjadwalan fleksibel',
+          'Kesempatan networking',
+          'Kurikulum terstandar',
+          'Sertifikat setelah selesai',
+        ],
+      },
+      inHouseTraining: {
+        title: 'Pelatihan In-House',
+        description:
+          'Solusi pelatihan yang disesuaikan khusus untuk organisasi Anda. Kami menyesuaikan konten kami untuk mengatasi tantangan spesifik dan tujuan bisnis Anda.',
+        features: [
+          'Penyampaian konten yang disesuaikan',
+          'Studi kasus khusus perusahaan',
+          'Opsi di tempat atau virtual',
+          'Fokus pada team building',
+        ],
+      },
+      learnMore: 'Pelajari Lebih Lanjut',
+    },
+    syllabus: {
+      title: "Jelajahi Silabus Kami",
+      subtitle: "Pilihan topik yang dikurasi untuk mengatasi tantangan perusahaan modern dan menginspirasi inovasi.",
+      categories: {
+        miningElectrical: {
+          title: "Pertambangan, Kelistrikan & Produksi",
+          description: "Pelatihan teknis untuk operasi industri"
+        },
+        operations: {
+          title: "Operasi & Pemeliharaan",
+          description: "Pelatihan komprehensif pemeliharaan dan operasional"
+        },
+        finance: {
+          title: "Keuangan, Akuntansi & Logistik",
+          description: "Pelatihan manajemen keuangan dan operasional"
+        },
+        management: {
+          title: "Manajemen, Sekretaris, Administrasi & Humas",
+          description: "Kepemimpinan dan pengembangan organisasi"
+        },
+        safety: {
+          title: "Kesehatan, Keselamatan & Lingkungan",
+          description: "Keselamatan kerja dan manajemen lingkungan"
+        }
+      }
+    },
+    clients: {
+      title: 'Dipercaya oleh Pemimpin Industri',
+      subtitle: 'Kami bangga bekerja sama dengan organisasi luar biasa ini.',
+    },
+    faq: {
+      title: 'Pertanyaan yang Sering Diajukan',
+      questions: {
+        location: {
+          question: 'Di mana lokasi pelatihan Anda?',
+          answer:
+            'Kami melakukan pelatihan di kota-kota besar di Indonesia termasuk Jakarta, Bandung, Yogyakarta, Surabaya, dan Bali. Semua sesi pelatihan diadakan di hotel bintang 4 untuk kenyamanan dan pengalaman belajar yang optimal.',
+        },
+        experience: {
+          question: 'Bagaimana pengalaman pelatihan Anda?',
+          answer:
+            'Sejak 2010, UTC telah melakukan lebih dari 520 sesi pelatihan yang terdiri dari 235 topik berbeda dengan lebih dari 1.550 peserta.',
+        },
+        quality: {
+          question: 'Bagaimana Anda memastikan kualitas pelatihan?',
+          answer:
+            'Kami berkolaborasi dengan laboratorium dan institusi universitas terkemuka, dan program pelatihan kami dirancang untuk memberikan pengalaman praktis yang dapat dengan mudah diterapkan di tempat kerja.',
+        },
+      },
+    },
+    cta: {
+      title1: 'Siap mengembangkan tim Anda?',
+      title2: 'Mulai perjalanan pelatihan Anda hari ini.',
+      description:
+        'Para ahli kami siap membantu Anda menavigasi dunia pengembangan profesional dan pelatihan yang kompleks.',
+      scheduleButton: 'Jadwalkan Pelatihan',
+      downloadBrochureButton: 'Unduh Brosur',
+    },
   },
   services: {
-    title: 'Telusuri Layanan Training Kami',
-    subtitle: 'Pilih format pelatihan yang paling sesuai dengan kebutuhan Anda',
     publicTraining: {
-      title: 'Pelatihan Publik',
-      description:
-        'Kursus pendaftaran terbuka yang dirancang untuk individu dan tim kecil. Bergabunglah dengan kelompok profesional beragam dalam lingkungan pembelajaran terstruktur kami dengan instruktur terkemuka.',
-      features: [
-        'Opsi penjadwalan fleksibel',
-        'Kesempatan networking',
-        'Kurikulum terstandar',
-        'Sertifikat setelah selesai',
-      ],
+      title: 'Program Pelatihan Publik',
+      description: 'Bergabunglah dengan program pelatihan komprehensif kami yang dirancang untuk meningkatkan keterampilan profesional dan mengembangkan karir Anda melalui pengalaman belajar praktis.',
+      whyChooseUs: {
+        title: 'Mengapa Memilih Pelatihan Publik Kami?',
+        benefits: {
+          networking: {
+            title: 'Kesempatan Jejaring',
+            description: 'Terhubung dengan para profesional dari berbagai industri dan perluas jaringan profesional Anda.'
+          },
+          scheduling: {
+            title: 'Jadwal Fleksibel',
+            description: 'Pilih dari berbagai tanggal sepanjang tahun yang paling sesuai dengan jadwal Anda.'
+          },
+          certification: {
+            title: 'Sertifikasi',
+            description: 'Dapatkan sertifikasi yang diakui industri setelah berhasil menyelesaikan program.'
+          },
+          timeEfficient: {
+            title: 'Efisien Waktu',
+            description: 'Pengalaman belajar terkonsentrasi yang dirancang untuk memaksimalkan investasi waktu Anda.'
+          }
+        }
+      },
+      availablePrograms: {
+        title: 'Program yang Tersedia',
+        search: 'Cari pelatihan...',
+        filter: 'Filter',
+        table: {
+          trainingTitle: 'Judul Pelatihan',
+          topics: 'Topik',
+          trainingDays: 'Hari Pelatihan',
+          trainingHours: 'Jam Pelatihan Per Hari',
+          startDate: 'Tanggal Mulai',
+          endDate: 'Tanggal Selesai',
+          onlinePrice: 'Biaya Online',
+          offlinePrice: 'Biaya Offline',
+          location: 'Lokasi',
+          phone: 'Nomor Telepon',
+          email: 'Alamat Email'
+        },
+        pagination: {
+          rowsPerPage: 'Baris per halaman:',
+          pageOf: 'Halaman {0} dari {1}'
+        }
+      }
     },
     inHouseTraining: {
-      title: 'Pelatihan In-House',
-      description:
-        'Solusi pelatihan yang disesuaikan khusus untuk organisasi Anda. Kami menyesuaikan konten kami untuk mengatasi tantangan spesifik dan tujuan bisnis Anda.',
-      features: [
-        'Penyampaian konten yang disesuaikan',
-        'Studi kasus khusus perusahaan',
-        'Opsi di tempat atau virtual',
-        'Fokus pada team building',
-      ],
-    },
-    learnMore: 'Pelajari Lebih Lanjut',
-  },
-  syllabus: {
-    title: "Jelajahi Silabus Kami",
-    subtitle: "Pilihan topik yang dikurasi untuk mengatasi tantangan perusahaan modern dan menginspirasi inovasi.",
-    categories: {
-      miningElectrical: {
-        title: "Pertambangan, Kelistrikan & Produksi",
-        description: "Pelatihan teknis untuk operasi industri"
+      title: 'Program Pelatihan In-House',
+      description: 'Program pelatihan yang dirancang khusus untuk organisasi Anda, selaras dengan tujuan bisnis dan budaya perusahaan.',
+      whyChooseUs: {
+        title: 'Mengapa Memilih Pelatihan In-House?',
+        features: {
+          customContent: {
+            title: 'Konten yang Disesuaikan',
+            description: 'Materi pelatihan disesuaikan dengan kebutuhan dan tujuan spesifik organisasi Anda'
+          },
+          teamDevelopment: {
+            title: 'Pengembangan Tim',
+            description: 'Membangun tim yang lebih kuat melalui pengalaman belajar bersama dan latihan kolaboratif'
+          },
+          onSiteDelivery: {
+            title: 'Pelatihan di Tempat',
+            description: 'Pelatihan dilakukan di lokasi pilihan Anda untuk kenyamanan maksimal'
+          },
+          flexibleFormat: {
+            title: 'Format Fleksibel',
+            description: 'Pilih antara metode tatap muka, virtual, atau hybrid'
+          }
+        }
       },
-      operations: {
-        title: "Operasi & Pemeliharaan",
-        description: "Pelatihan komprehensif pemeliharaan dan operasional"
-      },
-      finance: {
-        title: "Keuangan, Akuntansi & Logistik",
-        description: "Pelatihan manajemen keuangan dan operasional"
-      },
-      management: {
-        title: "Manajemen, Sekretaris, Administrasi & Humas",
-        description: "Kepemimpinan dan pengembangan organisasi"
-      },
-      safety: {
-        title: "Kesehatan, Keselamatan & Lingkungan",
-        description: "Keselamatan kerja dan manajemen lingkungan"
+      faq: {
+        title: 'Pertanyaan yang Sering Diajukan',
+        items: [
+          {
+            question: 'Berapa lama program pelatihan in-house biasanya berlangsung?',
+            answer: 'Durasi program fleksibel dan dapat disesuaikan berdasarkan kebutuhan Anda, biasanya berkisar antara 1-5 hari. Kami bekerja sama dengan Anda untuk menentukan durasi optimal berdasarkan kompleksitas konten dan ketersediaan tim Anda.'
+          },
+          {
+            question: 'Berapa ukuran grup minimum yang diperlukan?',
+            answer: 'Kami merekomendasikan minimum 8 peserta untuk memastikan pembelajaran interaktif dan efektivitas biaya, dengan maksimum 25 peserta per sesi untuk menjaga kualitas interaksi.'
+          },
+          {
+            question: 'Apakah pelatihan dapat dilakukan secara virtual?',
+            answer: 'Ya, kami menawarkan opsi virtual penuh dan hybrid menggunakan platform video conference enterprise. Pelatihan virtual kami mempertahankan tingkat interaksi dan keterlibatan yang sama dengan sesi tatap muka.'
+          },
+          {
+            question: 'Bagaimana Anda memastikan pelatihan memenuhi kebutuhan spesifik kami?',
+            answer: 'Kami memulai dengan penilaian kebutuhan yang menyeluruh, meninjau tujuan, tantangan, dan hasil yang diinginkan. Tim desainer instruksional kami kemudian menyesuaikan konten, termasuk studi kasus dan latihan yang relevan dengan industri Anda.'
+          }
+        ]
       }
     }
-  },
-  clients: {
-    title: 'Dipercaya oleh Pemimpin Industri',
-    subtitle: 'Kami bangga bekerja sama dengan organisasi luar biasa ini.',
-    stats: {
-      totalClients: 'Total Klien',
-      yearsExperience: 'Tahun Pengalaman',
-      industries: 'Industri',
-    },
-    categories: {
-      all: 'Semua',
-      energy: 'Energi',
-      manufacturing: 'Manufaktur',
-      mining: 'Pertambangan',
-    },
-  },
-  faq: {
-    title: 'Pertanyaan yang Sering Diajukan',
-    questions: {
-      location: {
-        question: 'Di mana lokasi pelatihan Anda?',
-        answer:
-          'Kami melakukan pelatihan di kota-kota besar di Indonesia termasuk Jakarta, Bandung, Yogyakarta, Surabaya, dan Bali. Semua sesi pelatihan diadakan di hotel bintang 4 untuk kenyamanan dan pengalaman belajar yang optimal.',
-      },
-      experience: {
-        question: 'Bagaimana pengalaman pelatihan Anda?',
-        answer:
-          'Sejak 2010, UTC telah melakukan lebih dari 520 sesi pelatihan yang terdiri dari 235 topik berbeda dengan lebih dari 1.550 peserta.',
-      },
-      quality: {
-        question: 'Bagaimana Anda memastikan kualitas pelatihan?',
-        answer:
-          'Kami berkolaborasi dengan laboratorium dan institusi universitas terkemuka, dan program pelatihan kami dirancang untuk memberikan pengalaman praktis yang dapat dengan mudah diterapkan di tempat kerja.',
-      },
-    },
-  },
-  cta: {
-    title1: 'Siap mengembangkan tim Anda?',
-    title2: 'Mulai perjalanan pelatihan Anda hari ini.',
-    description:
-      'Para ahli kami siap membantu Anda menavigasi dunia pengembangan profesional dan pelatihan yang kompleks.',
-    scheduleButton: 'Jadwalkan Pelatihan',
-    downloadBrochureButton: 'Unduh Brosur',
   },
   about: {
     title: 'Tentang Kami',
@@ -229,13 +315,68 @@ export const id = {
         },
       ],
     },
+    clients: {
+      title: 'Dipercaya oleh Pemimpin Industri',
+      subtitle: 'Kami bangga bekerja sama dengan organisasi luar biasa ini.',
+      stats: {
+        totalClients: 'Total Klien',
+        yearsExperience: 'Tahun Pengalaman',
+        industries: 'Industri',
+      },
+      categories: {
+        all: 'Semua',
+        energy: 'Energi',
+        manufacturing: 'Manufaktur',
+        mining: 'Pertambangan',
+      },
+    },
+  },
+  contact: {
+    title: 'Hubungi Kami',
+    description: 'Hubungi tim profesional kami untuk mendapatkan bantuan lebih lanjut',
+    form: {
+      title: 'Kirim pesan kepada kami',
+      consultationTitle: 'Jadwalkan Konsultasi',
+      subtitle: 'Isi formulir di bawah ini dan kami akan segera menghubungi Anda.',
+      consultationSubtitle: 'Silakan berikan informasi kontak Anda untuk menjadwalkan konsultasi.',
+      name: 'Nama',
+      namePlaceholder: 'Nama lengkap Anda',
+      emailAddress: 'Alamat Email',
+      emailPlaceholder: 'anda@example.com',
+      reason: {
+        title: 'Alasan menghubungi',
+        placeholder: 'Pilih alasan',
+        question: 'Pertanyaan tentang Layanan',
+        general: 'Pertanyaan Umum',
+        book: 'Pesan Konsultasi'
+      },
+      message: 'Pesan',
+      messagePlaceholder: 'Pesan Anda...',
+      scheduleButton: 'Jadwalkan Konsultasi',
+      sendButton: 'Kirim Pesan'
+    },
+    office: {
+      title: 'Kantor Pusat',
+      address: 'Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Palmerah, Matraman Jakarta Timur 13140'
+    },
+    phone: {
+      title: 'Telepon',
+      gunawan: '+62 821 2283 6526 (Gunawan)',
+      mimie: '+62 813 1851 7205 (Mimie)'
+    },
+    email: {
+      title: 'Email',
+      address: 'gunawan@united-trainingdevelopment.com'
+    },
+    socials: {
+      title: 'Media Sosial',
+    }
   },
   footer: {
     companyName: 'United Training Consultant',
     description: 'Layanan konsultasi dan pelatihan profesional sejak 2010.',
-    about: 'Tentang',
-    services: 'Layanan',
-    contact: 'Kontak',
+    address: 'Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Jakarta Timur 13140',
+    quickLinks: 'Tautan Cepat',
     copyright:
       '© 2025 United Training Consulting. Hak cipta dilindungi undang-undang.',
   },

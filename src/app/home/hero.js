@@ -54,7 +54,7 @@ export default function HeroSection() {
           <span className="block text-primary">Smart People</span>
         </h1>
         <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          {t('hero.description')}
+          {t('home.hero.description')}
         </p>
 
         <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center sm:space-x-4 gap-2">
@@ -64,7 +64,7 @@ export default function HeroSection() {
             className="shadow-md transition transform hover:scale-105"
             onClick={() => setIsModalOpen(true)}
           >
-            {t('hero.scheduleButton')}
+            {t('home.hero.scheduleButton')}
           </Button>
 
           <FormModal
@@ -78,7 +78,7 @@ export default function HeroSection() {
               size="lg"
               className="shadow-md transition transform hover:scale-105"
             >
-              {t('hero.downloadBrochureButton')}
+              {t('home.hero.downloadBrochureButton')}
             </Button>
           </Link>
         </div>

@@ -19,8 +19,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { useLanguage } from '@/context/LanguageContext';
 
 const FormModal = ({ isOpen, onClose }) => {
+  const { t } = useLanguage();
   const [contactReason, setContactReason] = useState('');
 
   const handleSubmit = (e) => {
@@ -35,55 +37,65 @@ const FormModal = ({ isOpen, onClose }) => {
         <DialogHeader>
           <DialogTitle>
             {contactReason === 'consultation'
-              ? 'Schedule a Consultation'
-              : 'Send us a message'}
+              ? t('contact.form.consultationTitle')
+              : t('contact.form.title')}
           </DialogTitle>
           <DialogDescription>
             {contactReason === 'consultation'
-              ? 'Please provide your contact information to schedule a consultation.'
-              : "Fill out the form below and we'll get back to you as soon as possible."}
+              ? t('contact.form.consultationSubtitle')
+              : t('contact.form.subtitle')}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Your full name" required />
+            <Label htmlFor="name">{t('contact.form.name')}</Label>
+            <Input 
+              id="name" 
+              placeholder={t('contact.form.namePlaceholder')} 
+              required 
+            />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email Address</Label>
+            <Label htmlFor="email">{t('contact.form.emailAddress')}</Label>
             <Input
               id="email"
               type="email"
-              placeholder="you@example.com"
+              placeholder={t('contact.form.emailPlaceholder')}
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="reason">Reason for Contacting</Label>
+            <Label htmlFor="reason">{t('contact.form.reason.title')}</Label>
             <Select onValueChange={setContactReason}>
               <SelectTrigger>
-                <SelectValue placeholder="Select a reason" />
+                <SelectValue placeholder={t('contact.form.reason.placeholder')} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="services">
-                  Questions about Services
+                  {t('contact.form.reason.question')}
                 </SelectItem>
-                <SelectItem value="general">General Inquiry</SelectItem>
-                <SelectItem value="consultation">Book Consultation</SelectItem>
+                <SelectItem value="general">
+                  {t('contact.form.reason.general')}
+                </SelectItem>
+                <SelectItem value="consultation">
+                  {t('contact.form.reason.book')}
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
+
           {contactReason !== 'consultation' && (
             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">{t('contact.form.message')}</Label>
               <Textarea
                 id="message"
-                placeholder="Your message..."
+                placeholder={t('contact.form.messagePlaceholder')}
                 className="min-h-[150px]"
                 required
               />
             </div>
           )}
+
           <div className="flex justify-end gap-4">
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
@@ -93,10 +105,10 @@ const FormModal = ({ isOpen, onClose }) => {
                 type="button"
                 onClick={() => (window.location.href = '/book-consultation')}
               >
-                Schedule Consultation
+                {t('contact.form.scheduleButton')}
               </Button>
             ) : (
-              <Button type="submit">Send Message</Button>
+              <Button type="submit">{t('contact.form.sendButton')}</Button>
             )}
           </div>
         </form>

@@ -11,15 +11,16 @@ const ClientSection = () => {
   const { t } = useLanguage();
 
   const categories = {
-    all: t('clients.categories.all'),
-    energy: t('clients.categories.energy'),
-    manufacturing: t('clients.categories.manufacturing'),
-    mining: t('clients.categories.mining'),
+    all: t('about.clients.categories.all'),
+    energy: t('about.clients.categories.energy'),
+    manufacturing: t('about.clients.categories.manufacturing'),
+    mining: t('about.clients.categories.mining'),
   };
 
   const logos = [
     { src: '/images/clients/pln.png', alt: 'PLN', category: 'energy' },
     { src: '/images/clients/chevron.png', alt: 'Chevron', category: 'energy' },
+    { src: '/images/clients/cirebon-power.png', alt: 'Cirebon Power', category: 'energy' },
     {
       src: '/images/clients/semen-padang.png',
       alt: 'Semen Padang',
@@ -42,6 +43,11 @@ const ClientSection = () => {
       category: 'energy',
     },
     {
+      src: '/images/clients/badak-lng.png',
+      alt: 'Badak LNG',
+      category: 'energy',
+    },
+    {
       src: '/images/clients/pusri.png',
       alt: 'PUSRI',
       category: 'manufacturing',
@@ -49,6 +55,11 @@ const ClientSection = () => {
     {
       src: '/images/clients/bukit-asam.png',
       alt: 'Bukit Asam',
+      category: 'mining',
+    },
+    {
+      src: '/images/clients/cnooc.png',
+      alt: 'Cnooc',
       category: 'mining',
     },
     {
@@ -64,6 +75,11 @@ const ClientSection = () => {
     {
       src: '/images/clients/nhm.png',
       alt: 'Nusa Halmahera Mineral',
+      category: 'mining',
+    },
+    {
+      src: '/images/clients/antam.png',
+      alt: 'Antam',
       category: 'mining',
     },
     {
@@ -84,9 +100,9 @@ const ClientSection = () => {
   ];
 
   const stats = [
-    { number: '150+', label: t('clients.stats.totalClients') },
-    { number: '15+', label: t('clients.stats.yearsExperience') },
-    { number: '3', label: t('clients.stats.industries') },
+    { number: '150+', label: t('about.clients.stats.totalClients') },
+    { number: '15+', label: t('about.clients.stats.yearsExperience') },
+    { number: '3', label: t('about.clients.stats.industries') },
   ];
 
   return (
@@ -96,11 +112,11 @@ const ClientSection = () => {
           <div className="flex items-center justify-center space-x-2">
             <Users className="w-8 h-8 text-primary" />
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              {t('clients.title')}
+              {t('about.clients.title')}
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t('clients.subtitle')}
+            {t('about.clients.subtitle')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -161,7 +177,7 @@ const ClientSection = () => {
                             src={logo.src}
                             alt={logo.alt}
                             fill
-                            className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                            className="object-contain"
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                           />
                         </div>

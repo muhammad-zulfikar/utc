@@ -28,7 +28,7 @@ export default function SyllabusSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            {t('syllabus.title').split(/(Silabus|Syllabus)/i).map((word, index) => 
+            {t('home.syllabus.title').split(/(Silabus|Syllabus)/i).map((word, index) => 
               (word.toLowerCase() === 'silabus' || word.toLowerCase() === 'syllabus') ? (
                 <span key={index} className="text-primary">{word}</span>
               ) : (
@@ -37,7 +37,7 @@ export default function SyllabusSection() {
             )}
           </h2>
           <p className="mt-4 text-xl text-gray-600">
-            {t('syllabus.subtitle')}
+            {t('home.syllabus.subtitle')}
           </p>
         </div>
         <div className="mt-16">
@@ -54,17 +54,17 @@ export default function SyllabusSection() {
                         <syllabusData.icon className="h-8 w-8 text-[hsl(48,77%,52%)]" />
                       </div>
                       <CardTitle className="text-2xl font-bold text-gray-800">
-                        {t(`syllabus.categories.${key}.title`)}
+                        {t(`home.syllabus.categories.${key}.title`)}
                       </CardTitle>
                       <CardDescription className="text-gray-600">
-                        {t(`syllabus.categories.${key}.description`)}
+                        {t(`home.syllabus.categories.${key}.description`)}
                       </CardDescription>
                     </CardHeader>
                   </DrawerTrigger>
                   <DrawerContent>
                     <DrawerHeader>
                       <DrawerTitle className="text-2xl font-bold text-[hsl(48,77%,52%)]">
-                        {t(`syllabus.categories.${key}.title`)}
+                        {t(`home.syllabus.categories.${key}.title`)}
                       </DrawerTitle>
                     </DrawerHeader>
                     <ScrollArea className="p-6 max-h-[60vh] overflow-auto">

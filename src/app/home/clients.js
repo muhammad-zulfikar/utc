@@ -15,11 +15,15 @@ const ClientSection = () => {
     { src: '/images/clients/semen-padang.png', alt: 'Semen Padang' },
     { src: '/images/clients/krakatau-steel.png', alt: 'Krakatau Steel' },
     { src: '/images/clients/pelindo.png', alt: 'Pelindo' },
+    { src: '/images/clients/cnooc.png', alt: 'Cnooc' },
     { src: '/images/clients/mandiri.png', alt: 'Mandiri' },
+    { src: '/images/clients/badak-lng.png', alt: 'Badak LNG' },
     { src: '/images/clients/pertamina.png', alt: 'Pertamina' },
     { src: '/images/clients/pusri.png', alt: 'PUSRI' },
+    { src: '/images/clients/antam.png', alt: 'Antam' },
     { src: '/images/clients/bukit-asam.png', alt: 'Bukit Asam' },
     { src: '/images/clients/bogasari.png', alt: 'Bogasari' },
+    { src: '/images/clients/cirebon-power.png', alt: 'Cirebon Power' },
     { src: '/images/clients/ahm.png', alt: 'Astra Honda Motor' },
     { src: '/images/clients/nhm.png', alt: 'Nusa Halmahera Mineral' },
     { src: '/images/clients/ytlpower.png', alt: 'YTL Power' },
@@ -42,9 +46,9 @@ const ClientSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            {t('clients.title')}
+            {t('home.clients.title')}
           </h2>
-          <p className="mt-4 text-xl text-gray-600">{t('clients.subtitle')}</p>
+          <p className="mt-4 text-xl text-gray-600">{t('home.clients.subtitle')}</p>
         </div>
 
         <Card className="overflow-hidden border-none shadow-none bg-transparent">

@@ -19,26 +19,26 @@ const ServicesSection = () => {
 
   const services = [
     {
-      title: t('services.publicTraining.title'),
-      description: t('services.publicTraining.description'),
+      title: t('home.services.publicTraining.title'),
+      description: t('home.services.publicTraining.description'),
       features: [
-        t('services.publicTraining.features.0'),
-        t('services.publicTraining.features.1'),
-        t('services.publicTraining.features.2'),
-        t('services.publicTraining.features.3'),
+        t('home.services.publicTraining.features.0'),
+        t('home.services.publicTraining.features.1'),
+        t('home.services.publicTraining.features.2'),
+        t('home.services.publicTraining.features.3'),
       ],
       icon: <Users className="w-10 h-10 text-[#FFC000]" />,
       link: '/training/public',
       imageSrc: '/images/1.jpeg',
     },
     {
-      title: t('services.inHouseTraining.title'),
-      description: t('services.inHouseTraining.description'),
+      title: t('home.services.inHouseTraining.title'),
+      description: t('home.services.inHouseTraining.description'),
       features: [
-        t('services.inHouseTraining.features.0'),
-        t('services.inHouseTraining.features.1'),
-        t('services.inHouseTraining.features.2'),
-        t('services.inHouseTraining.features.3'),
+        t('home.services.inHouseTraining.features.0'),
+        t('home.services.inHouseTraining.features.1'),
+        t('home.services.inHouseTraining.features.2'),
+        t('home.services.inHouseTraining.features.3'),
       ],
       icon: <Building2 className="w-10 h-10 text-[#FFC000]" />,
       link: '/training/in-house',
@@ -51,11 +51,11 @@ const ServicesSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            {t('services.title').split('Training')[0]}
+            {t('home.services.title').split('Training')[0]}
             <span className="text-primary">Training</span>
-            {t('services.title').split('Training')[1]}
+            {t('home.services.title').split('Training')[1]}
           </h2>
-          <p className="mt-4 text-xl text-gray-600">{t('services.subtitle')}</p>
+          <p className="mt-4 text-xl text-gray-600">{t('home.services.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -97,7 +97,7 @@ const ServicesSection = () => {
               <CardFooter>
                 <Link href={service.link} className="w-full">
                   <Button variant="default" className="w-full group">
-                    {t('services.learnMore')}
+                    {t('home.services.learnMore')}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>

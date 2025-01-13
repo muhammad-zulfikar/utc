@@ -37,27 +37,34 @@ import {
 import { useLanguage } from '@/context/LanguageContext';
 import courseData from '@/data/training-2025.csv';
 
+const benefitIcons = {
+  networking: <Users className="w-6 h-6 text-primary" />,
+  scheduling: <Calendar className="w-6 h-6 text-primary" />,
+  certification: <Award className="w-6 h-6 text-primary" />,
+  timeEfficient: <Clock className="w-6 h-6 text-primary" />,
+};
+
 const benefits = [
   {
-    icon: <Users className="w-6 h-6 text-[#FFC000]" />,
+    icon: <Users className="w-6 h-6 text-primary" />,
     title: 'Networking Opportunities',
     description:
       'Connect with professionals across different industries and expand your professional network.',
   },
   {
-    icon: <Calendar className="w-6 h-6 text-[#FFC000]" />,
+    icon: <Calendar className="w-6 h-6 text-primary" />,
     title: 'Flexible Scheduling',
     description:
       'Choose from multiple dates throughout the year that best fit your schedule.',
   },
   {
-    icon: <Award className="w-6 h-6 text-[#FFC000]" />,
+    icon: <Award className="w-6 h-6 text-primary" />,
     title: 'Certification',
     description:
       'Receive industry-recognized certification upon successful completion of the program.',
   },
   {
-    icon: <Clock className="w-6 h-6 text-[#FFC000]" />,
+    icon: <Clock className="w-6 h-6 text-primary" />,
     title: 'Time-Efficient',
     description:
       'Concentrated learning experience designed to maximize your time investment.',
@@ -119,12 +126,10 @@ function PublicTraining() {
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-4xl font-bold mb-4">
-              Public Training Programs
+              {t('services.publicTraining.title')}
             </h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Join our comprehensive training programs designed to enhance your
-              professional skills and advance your career through hands-on
-              learning experiences.
+              {t('services.publicTraining.description')}
             </p>
           </div>
         </div>
@@ -133,13 +138,13 @@ function PublicTraining() {
       {/* Benefits Section */}
       <div className="py-16 container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">
-          Why Choose Our Public Training?
+          {t('services.publicTraining.whyChooseUs.title')}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <Card key={index} className="border-2 border-gray-100">
+          {Object.entries(t('services.publicTraining.whyChooseUs.benefits')).map(([key, benefit]) => (
+            <Card key={key} className="border-2 border-gray-100">
               <CardHeader className="space-y-4">
-                <div>{benefit.icon}</div>
+                <div>{benefitIcons[key]}</div>
                 <CardTitle>{benefit.title}</CardTitle>
                 <CardDescription>{benefit.description}</CardDescription>
               </CardHeader>
@@ -151,11 +156,11 @@ function PublicTraining() {
       {/* Available Programs Section */}
       <div className="container mx-auto px-4 mb-16 bg-white rounded-2xl shadow-xl py-12">
         <h2 className="text-3xl font-bold mb-8 text-center">
-          Available Programs
+          {t('services.publicTraining.availablePrograms.title')}
         </h2>
         <div className="flex gap-4 mb-6 justify-end items-center">
           <Input
-            placeholder="Search training..."
+            placeholder={t('services.publicTraining.availablePrograms.search')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="max-w-sm border-2 border-gray-300 focus:outline-none"
@@ -167,7 +172,7 @@ function PublicTraining() {
                 className="border-2 border-gray-300 flex items-center gap-2"
               >
                 <Filter className="w-4 h-4" />
-                Filter
+                {t('services.publicTraining.availablePrograms.filter')}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -189,29 +194,37 @@ function PublicTraining() {
             <TableHeader>
               <TableRow className="bg-gray-200 text-sm font-semibold text-gray-700">
                 <TableHead className="whitespace-nowrap">
-                  Training Title
-                </TableHead>
-                <TableHead className="whitespace-nowrap">Topics</TableHead>
-                <TableHead className="whitespace-nowrap">
-                  Training Days
+                  {t('services.publicTraining.availablePrograms.table.trainingTitle')}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  Training Hours per Days
-                </TableHead>
-                <TableHead className="whitespace-nowrap">Start Date</TableHead>
-                <TableHead className="whitespace-nowrap">End Date</TableHead>
-                <TableHead className="whitespace-nowrap">
-                  Online Price
+                  {t('services.publicTraining.availablePrograms.table.topics')}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  Offline Price
-                </TableHead>
-                <TableHead className="whitespace-nowrap">Location</TableHead>
-                <TableHead className="whitespace-nowrap">
-                  Phone Number
+                  {t('services.publicTraining.availablePrograms.table.trainingDays')}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  E-mail Address
+                  {t('services.publicTraining.availablePrograms.table.trainingHours')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.startDate')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.endDate')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.onlinePrice')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.offlinePrice')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.location')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.phone')}
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  {t('services.publicTraining.availablePrograms.table.email')}
                 </TableHead>
               </TableRow>
             </TableHeader>
@@ -260,7 +273,7 @@ function PublicTraining() {
         {/* Pagination Controls */}
         <div className="flex items-center justify-between mt-6 text-sm text-gray-600">
           <div className="hidden md:flex items-center space-x-2">
-            <p>Rows per page:</p>
+            <p>{t('services.publicTraining.availablePrograms.pagination.rowsPerPage')}</p>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline">{itemsPerPage}</Button>
@@ -279,7 +292,7 @@ function PublicTraining() {
           </div>
 
           <span>
-            Page {currentPage} of {totalPages}
+            {t('services.publicTraining.availablePrograms.pagination.pageOf').replace('{0}', currentPage).replace('{1}', totalPages)}
           </span>
 
           <div className="flex items-center space-x-2">
