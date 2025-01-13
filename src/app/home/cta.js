@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import FormModal from "@/app/components/FormModal";
-import { useLanguage } from "@/context/LanguageContext";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import FormModal from '@/app/components/FormModal';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function CtaSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,7 +14,9 @@ export default function CtaSection() {
       <div className="max-w-7xl mx-auto text-center p-8 sm:p-12 rounded-xl shadow-lg bg-primary">
         <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl space-y-2">
           <span className="block tracking-tight">{t('cta.title1')}</span>
-          <span className="block text-white tracking-tight">{t('cta.title2')}</span>
+          <span className="block text-white tracking-tight">
+            {t('cta.title2')}
+          </span>
         </h2>
         <p className="mt-6 text-lg leading-7 text-gray-700 text-opacity-80">
           {t('cta.description')}

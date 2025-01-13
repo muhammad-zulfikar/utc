@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import FormModal from "@/app/components/FormModal";
-import Image from "next/image";
-import Link from "next/link";
-import { useLanguage } from "@/context/LanguageContext";
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import FormModal from '@/app/components/FormModal';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 const images = [
-  "/images/hero/hero-1.jpg",
-  "/images/hero/hero-2.jpg",
-  "/images/hero/hero-3.jpg",
-  "/images/hero/hero-4.jpeg",
+  '/images/hero/hero-1.jpg',
+  '/images/hero/hero-2.jpg',
+  '/images/hero/hero-3.jpg',
+  '/images/hero/hero-4.jpeg',
 ];
 
 export default function HeroSection() {
@@ -32,7 +32,9 @@ export default function HeroSection() {
         <div
           key={index}
           className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            currentImageIndex === index ? "opacity-100 scale-100" : "opacity-0 scale-105"
+            currentImageIndex === index
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-105'
           }`}
         >
           <Image
@@ -62,10 +64,13 @@ export default function HeroSection() {
             className="shadow-md transition transform hover:scale-105"
             onClick={() => setIsModalOpen(true)}
           >
-            {t("hero.scheduleButton")}
+            {t('hero.scheduleButton')}
           </Button>
 
-          <FormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          <FormModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
 
           <Link href="/training/public">
             <Button
@@ -73,7 +78,7 @@ export default function HeroSection() {
               size="lg"
               className="shadow-md transition transform hover:scale-105"
             >
-              {t("hero.downloadBrochureButton")}
+              {t('hero.downloadBrochureButton')}
             </Button>
           </Link>
         </div>
@@ -84,7 +89,7 @@ export default function HeroSection() {
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-              currentImageIndex === index ? "bg-[#FFC000]" : "bg-gray-500"
+              currentImageIndex === index ? 'bg-[#FFC000]' : 'bg-gray-500'
             }`}
             onClick={() => setCurrentImageIndex(index)}
             aria-label={`Go to slide ${index + 1}`}

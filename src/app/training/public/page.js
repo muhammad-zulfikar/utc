@@ -1,52 +1,86 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Filter, Calendar, Users, Award, Clock, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
-import courseData from "@/data/training-2025.csv";
+import { useState } from 'react';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { Input } from '@/components/ui/input';
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import {
+  Filter,
+  Calendar,
+  Users,
+  Award,
+  Clock,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import courseData from '@/data/training-2025.csv';
 
 const benefits = [
   {
     icon: <Users className="w-6 h-6 text-[#FFC000]" />,
-    title: "Networking Opportunities",
-    description: "Connect with professionals across different industries and expand your professional network.",
+    title: 'Networking Opportunities',
+    description:
+      'Connect with professionals across different industries and expand your professional network.',
   },
   {
     icon: <Calendar className="w-6 h-6 text-[#FFC000]" />,
-    title: "Flexible Scheduling",
-    description: "Choose from multiple dates throughout the year that best fit your schedule.",
+    title: 'Flexible Scheduling',
+    description:
+      'Choose from multiple dates throughout the year that best fit your schedule.',
   },
   {
     icon: <Award className="w-6 h-6 text-[#FFC000]" />,
-    title: "Certification",
-    description: "Receive industry-recognized certification upon successful completion of the program.",
+    title: 'Certification',
+    description:
+      'Receive industry-recognized certification upon successful completion of the program.',
   },
   {
     icon: <Clock className="w-6 h-6 text-[#FFC000]" />,
-    title: "Time-Efficient",
-    description: "Concentrated learning experience designed to maximize your time investment.",
+    title: 'Time-Efficient',
+    description:
+      'Concentrated learning experience designed to maximize your time investment.',
   },
 ];
 
 function PublicTraining() {
-  const [search, setSearch] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState("All");
+  const [search, setSearch] = useState('');
+  const [selectedTopic, setSelectedTopic] = useState('All');
   const { t } = useLanguage();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(20);
 
-  const topics = ["All", ...new Set(courseData.map((course) => course.Topik))];
+  const topics = ['All', ...new Set(courseData.map((course) => course.Topik))];
 
   const filteredCourses = courseData.filter((course) => {
-    if (!course || !course["Judul Pelatihan"]) return false;
-    const matchesSearch = course["Judul Pelatihan"].toLowerCase().includes(search.toLowerCase());
-    const matchesTopic = selectedTopic === "All" || course.Topik === selectedTopic;
+    if (!course || !course['Judul Pelatihan']) return false;
+    const matchesSearch = course['Judul Pelatihan']
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const matchesTopic =
+      selectedTopic === 'All' || course.Topik === selectedTopic;
     return matchesSearch && matchesTopic;
   });
 
@@ -79,15 +113,18 @@ function PublicTraining() {
       <div className="absolute inset-0 z-[-1] bg-transparent">
         <div className="absolute inset-0 bg-[length:50px_50px] bg-[linear-gradient(to_right,rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.1)_1px,transparent_1px)] animate-scroll-grid"></div>
       </div>
-      
+
       {/* Hero Section */}
       <div className="relative h-80 bg-primary">
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-4xl font-bold mb-4">Public Training Programs</h1>
+            <h1 className="text-4xl font-bold mb-4">
+              Public Training Programs
+            </h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Join our comprehensive training programs designed to enhance your professional skills
-              and advance your career through hands-on learning experiences.
+              Join our comprehensive training programs designed to enhance your
+              professional skills and advance your career through hands-on
+              learning experiences.
             </p>
           </div>
         </div>
@@ -95,7 +132,9 @@ function PublicTraining() {
 
       {/* Benefits Section */}
       <div className="py-16 container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our Public Training?</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Why Choose Our Public Training?
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <Card key={index} className="border-2 border-gray-100">
@@ -111,7 +150,9 @@ function PublicTraining() {
 
       {/* Available Programs Section */}
       <div className="container mx-auto px-4 mb-16 bg-white rounded-2xl shadow-xl py-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">Available Programs</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          Available Programs
+        </h2>
         <div className="flex gap-4 mb-6 justify-end items-center">
           <Input
             placeholder="Search training..."
@@ -121,7 +162,10 @@ function PublicTraining() {
           />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="border-2 border-gray-300 flex items-center gap-2">
+              <Button
+                variant="outline"
+                className="border-2 border-gray-300 flex items-center gap-2"
+              >
                 <Filter className="w-4 h-4" />
                 Filter
               </Button>
@@ -131,7 +175,7 @@ function PublicTraining() {
                 <DropdownMenuItem
                   key={index}
                   onClick={() => setSelectedTopic(topic)}
-                  className={selectedTopic === topic ? "bg-gray-100" : ""}
+                  className={selectedTopic === topic ? 'bg-gray-100' : ''}
                 >
                   {topic}
                 </DropdownMenuItem>
@@ -141,36 +185,72 @@ function PublicTraining() {
         </div>
 
         <div className="overflow-x-auto bg-gray-50 rounded-xl shadow-sm">
-        <Table>
+          <Table>
             <TableHeader>
               <TableRow className="bg-gray-200 text-sm font-semibold text-gray-700">
-                <TableHead className="whitespace-nowrap">Training Title</TableHead>
+                <TableHead className="whitespace-nowrap">
+                  Training Title
+                </TableHead>
                 <TableHead className="whitespace-nowrap">Topics</TableHead>
-                <TableHead className="whitespace-nowrap">Training Days</TableHead>
-                <TableHead className="whitespace-nowrap">Training Hours per Days</TableHead>
+                <TableHead className="whitespace-nowrap">
+                  Training Days
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  Training Hours per Days
+                </TableHead>
                 <TableHead className="whitespace-nowrap">Start Date</TableHead>
                 <TableHead className="whitespace-nowrap">End Date</TableHead>
-                <TableHead className="whitespace-nowrap">Online Price</TableHead>
-                <TableHead className="whitespace-nowrap">Offline Price</TableHead>
+                <TableHead className="whitespace-nowrap">
+                  Online Price
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  Offline Price
+                </TableHead>
                 <TableHead className="whitespace-nowrap">Location</TableHead>
-                <TableHead className="whitespace-nowrap">Phone Number</TableHead>
-                <TableHead className="whitespace-nowrap">E-mail Address</TableHead>
+                <TableHead className="whitespace-nowrap">
+                  Phone Number
+                </TableHead>
+                <TableHead className="whitespace-nowrap">
+                  E-mail Address
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {paginatedCourses.map((course, index) => (
                 <TableRow key={index}>
-                  <TableCell className="font-medium whitespace-nowrap">{course["Judul Pelatihan"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Topik"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Hari Pelatihan"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Jam Pelatihan Per Hari"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Tanggal Awal"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Tanggal Akhir"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Biaya Online"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Biaya Offline"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Lokasi Pelatihan"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">0{course["No Telepon/HP"]}</TableCell>
-                  <TableCell className="whitespace-nowrap">{course["Alamat Email"]}</TableCell>
+                  <TableCell className="font-medium whitespace-nowrap">
+                    {course['Judul Pelatihan']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Topik']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Hari Pelatihan']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Jam Pelatihan Per Hari']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Tanggal Awal']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Tanggal Akhir']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Biaya Online']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Biaya Offline']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Lokasi Pelatihan']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    0{course['No Telepon/HP']}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {course['Alamat Email']}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -183,9 +263,7 @@ function PublicTraining() {
             <p>Rows per page:</p>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">
-                  {itemsPerPage}
-                </Button>
+                <Button variant="outline">{itemsPerPage}</Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 {[10, 20, 50].map((count) => (

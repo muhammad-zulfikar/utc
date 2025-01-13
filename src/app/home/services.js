@@ -1,11 +1,18 @@
-"use client";
+'use client';
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/context/LanguageContext";
-import { Building2, Users, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/LanguageContext';
+import { Building2, Users, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -18,11 +25,11 @@ const ServicesSection = () => {
         t('services.publicTraining.features.0'),
         t('services.publicTraining.features.1'),
         t('services.publicTraining.features.2'),
-        t('services.publicTraining.features.3')
+        t('services.publicTraining.features.3'),
       ],
       icon: <Users className="w-10 h-10 text-[#FFC000]" />,
-      link: "/training/public",
-      imageSrc: "/images/1.jpeg"
+      link: '/training/public',
+      imageSrc: '/images/1.jpeg',
     },
     {
       title: t('services.inHouseTraining.title'),
@@ -31,12 +38,12 @@ const ServicesSection = () => {
         t('services.inHouseTraining.features.0'),
         t('services.inHouseTraining.features.1'),
         t('services.inHouseTraining.features.2'),
-        t('services.inHouseTraining.features.3')
+        t('services.inHouseTraining.features.3'),
       ],
       icon: <Building2 className="w-10 h-10 text-[#FFC000]" />,
-      link: "/training/in-house",
-      imageSrc: "/images/2.jpeg"
-    }
+      link: '/training/in-house',
+      imageSrc: '/images/2.jpeg',
+    },
   ];
 
   return (
@@ -48,16 +55,17 @@ const ServicesSection = () => {
             <span className="text-primary">Training</span>
             {t('services.title').split('Training')[1]}
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
-            {t('services.subtitle')}
-          </p>
+          <p className="mt-4 text-xl text-gray-600">{t('services.subtitle')}</p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <Card
+              key={index}
+              className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
               <div className="relative h-48 overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${service.imageSrc})`,
@@ -65,12 +73,16 @@ const ServicesSection = () => {
                 />
                 <div className="absolute inset-0 bg-black/30" />
               </div>
-              
+
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-base">
+                  {service.description}
+                </CardDescription>
               </CardHeader>
-              
+
               <CardContent>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
@@ -81,13 +93,10 @@ const ServicesSection = () => {
                   ))}
                 </ul>
               </CardContent>
-              
+
               <CardFooter>
                 <Link href={service.link} className="w-full">
-                  <Button 
-                    variant="default" 
-                    className="w-full group"
-                  >
+                  <Button variant="default" className="w-full group">
                     {t('services.learnMore')}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>

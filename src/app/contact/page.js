@@ -1,27 +1,33 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Phone, Mail, Building2 } from 'lucide-react'
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { useState } from 'react';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from '@/components/ui/card';
+import { Phone, Mail, Building2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 
 export default function Contact() {
-  const [contactReason, setContactReason] = useState("");
+  const [contactReason, setContactReason] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted");
+    console.log('Form submitted');
   };
 
   return (
@@ -46,11 +52,13 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle>
-                {contactReason === "consultation" ? "Schedule a Consultation" : "Send us a message"}
+                {contactReason === 'consultation'
+                  ? 'Schedule a Consultation'
+                  : 'Send us a message'}
               </CardTitle>
               <CardDescription>
-                {contactReason === "consultation" 
-                  ? "Please provide your contact information to schedule a consultation."
+                {contactReason === 'consultation'
+                  ? 'Please provide your contact information to schedule a consultation.'
                   : "Fill out the form below and we'll get back to you as soon as possible."}
               </CardDescription>
             </CardHeader>
@@ -58,11 +66,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    placeholder="Your full name"
-                    required
-                  />
+                  <Input id="name" placeholder="Your full name" required />
                 </div>
 
                 <div className="space-y-2">
@@ -77,22 +81,23 @@ export default function Contact() {
 
                 <div className="space-y-2">
                   <Label htmlFor="reason">Reason for Contacting</Label>
-                  <Select
-                    onValueChange={setContactReason}
-                    required
-                  >
+                  <Select onValueChange={setContactReason} required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a reason" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="services">Questions about Services</SelectItem>
+                      <SelectItem value="services">
+                        Questions about Services
+                      </SelectItem>
                       <SelectItem value="general">General Inquiry</SelectItem>
-                      <SelectItem value="consultation">Book Consultation</SelectItem>
+                      <SelectItem value="consultation">
+                        Book Consultation
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
-                {contactReason !== "consultation" && (
+                {contactReason !== 'consultation' && (
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
                     <Textarea
@@ -105,17 +110,23 @@ export default function Contact() {
                 )}
 
                 <div className="flex justify-center">
-                  {contactReason === "consultation" ? (
+                  {contactReason === 'consultation' ? (
                     <Button
                       type="button"
                       size="lg"
                       className="w-full sm:w-auto px-8"
-                      onClick={() => window.location.href = '/book-consultation'}
+                      onClick={() =>
+                        (window.location.href = '/book-consultation')
+                      }
                     >
                       Schedule Consultation
                     </Button>
                   ) : (
-                    <Button type="submit" size="lg" className="w-full sm:w-auto px-8">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full sm:w-auto px-8"
+                    >
                       Send Message
                     </Button>
                   )}
@@ -133,39 +144,46 @@ export default function Contact() {
                 <Building2 className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>Head Office</CardTitle>
                 <CardDescription>
-                  Gedung ASCOM, Lt.2
-                  Jl. Matraman Raya No.67
-                  Palmerah, Matraman
+                  Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Palmerah, Matraman
                   Jakarta Timur 13140
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <Phone className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>Phone</CardTitle>
                 <CardDescription>
                   <li>
-                    <a href="https://wa.me/+622129613810" className="text-[#FFC000]">
+                    <a
+                      href="https://wa.me/+622129613810"
+                      className="text-[#FFC000]"
+                    >
                       +62 21 29613810
                     </a>
                   </li>
                   <li>
-                    <a href="https://wa.me/+622129613810" className="text-[#FFC000]">
+                    <a
+                      href="https://wa.me/+622129613810"
+                      className="text-[#FFC000]"
+                    >
                       +62 21 29613810
                     </a>
                   </li>
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <Mail className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>Email</CardTitle>
                 <CardDescription>
-                  <a href="gunawan@united-trainingdevelopment.com" className="text-[#FFC000] dark:text-indigo-400 hover:underline">
+                  <a
+                    href="gunawan@united-trainingdevelopment.com"
+                    className="text-[#FFC000] dark:text-indigo-400 hover:underline"
+                  >
                     gunawan@united-trainingdevelopment.com
                   </a>
                 </CardDescription>
@@ -176,4 +194,4 @@ export default function Contact() {
       </main>
     </div>
   );
-} 
+}

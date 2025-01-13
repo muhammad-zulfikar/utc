@@ -1,7 +1,12 @@
-"use client";
+'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useLanguage } from "@/context/LanguageContext";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function FaqSection() {
   const { t } = useLanguage();
@@ -17,19 +22,25 @@ export default function FaqSection() {
 
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>{t('faq.questions.location.question')}</AccordionTrigger>
+            <AccordionTrigger>
+              {t('faq.questions.location.question')}
+            </AccordionTrigger>
             <AccordionContent>
               {t('faq.questions.location.answer')}
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>{t('faq.questions.experience.question')}</AccordionTrigger>
+            <AccordionTrigger>
+              {t('faq.questions.experience.question')}
+            </AccordionTrigger>
             <AccordionContent>
               {t('faq.questions.experience.answer')}
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>{t('faq.questions.quality.question')}</AccordionTrigger>
+            <AccordionTrigger>
+              {t('faq.questions.quality.question')}
+            </AccordionTrigger>
             <AccordionContent>
               {t('faq.questions.quality.answer')}
             </AccordionContent>

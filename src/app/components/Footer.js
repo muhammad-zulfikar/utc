@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from '@/context/LanguageContext';
 import { MapPin, Phone, Clock } from 'lucide-react';
 
 export default function Footer() {
@@ -19,9 +19,12 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
       {/* Abstract Pattern Background */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
       </div>
 
       {/* Main Content */}
@@ -30,8 +33,15 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-8">
             <div className="flex items-center space-x-4 justify-center md:justify-start">
-              <img src="/images/logo.png" alt="Logo" className="h-12 w-auto object-contain" />
-              <Link href="/" className="text-2xl font-bold tracking-wide hover:text-gray-300">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                className="h-12 w-auto object-contain"
+              />
+              <Link
+                href="/"
+                className="text-2xl font-bold tracking-wide hover:text-gray-300"
+              >
                 {t('footer.companyName')}
               </Link>
             </div>
@@ -46,7 +56,10 @@ export default function Footer() {
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -61,8 +74,10 @@ export default function Footer() {
               <div className="flex items-center justify-center md:justify-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400" />
                 <p className="text-gray-400">
-                  Gedung ASCOM, Lt.2<br />
-                  Jl. Matraman Raya No.67<br />
+                  Gedung ASCOM, Lt.2
+                  <br />
+                  Jl. Matraman Raya No.67
+                  <br />
                   Jakarta Timur 13140
                 </p>
               </div>
@@ -80,7 +95,9 @@ export default function Footer() {
           {/* Newsletter */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-400 mb-4">Stay updated with our latest news and updates.</p>
+            <p className="text-gray-400 mb-4">
+              Stay updated with our latest news and updates.
+            </p>
             <form className="space-y-4">
               <input
                 type="email"
@@ -100,47 +117,59 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400">
-              {t('footer.copyright')}
-            </p>
+            <p className="text-gray-400">{t('footer.copyright')}</p>
             <div className="flex space-x-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                className="transform hover:scale-110 transition-transform">
-                <Image 
-                  src="/images/socials/instagram.png" 
-                  alt="Instagram" 
-                  width={28} 
-                  height={28} 
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-transform"
+              >
+                <Image
+                  src="/images/socials/instagram.png"
+                  alt="Instagram"
+                  width={28}
+                  height={28}
                   className="filter grayscale hover:filter-none transition-all"
                 />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="transform hover:scale-110 transition-transform">
-                <Image 
-                  src="/images/socials/linkedin.png" 
-                  alt="LinkedIn" 
-                  width={28} 
-                  height={28} 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-transform"
+              >
+                <Image
+                  src="/images/socials/linkedin.png"
+                  alt="LinkedIn"
+                  width={28}
+                  height={28}
                   className="filter grayscale hover:filter-none transition-all"
                 />
               </a>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
-                className="transform hover:scale-110 transition-transform">
-                <Image 
-                  src="/images/socials/whatsapp.png" 
-                  alt="WhatsApp" 
-                  width={26} 
-                  height={26} 
+              <a
+                href="https://wa.me/1234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-transform"
+              >
+                <Image
+                  src="/images/socials/whatsapp.png"
+                  alt="WhatsApp"
+                  width={26}
+                  height={26}
                   className="filter grayscale hover:filter-none transition-all"
                 />
               </a>
-              <a href="mailto:info@example.com"
-                className="transform hover:scale-110 transition-transform">
-                <Image 
-                  src="/images/socials/gmail.png" 
-                  alt="Email" 
-                  width={26} 
-                  height={26} 
+              <a
+                href="mailto:info@example.com"
+                className="transform hover:scale-110 transition-transform"
+              >
+                <Image
+                  src="/images/socials/gmail.png"
+                  alt="Email"
+                  width={26}
+                  height={26}
                   className="filter grayscale hover:filter-none transition-all"
                 />
               </a>

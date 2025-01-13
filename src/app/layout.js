@@ -1,15 +1,16 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
-import { LanguageProvider } from '@/context/LanguageContext'
+import './globals.css';
+import { Inter } from 'next/font/google';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import { LanguageProvider } from '@/context/LanguageContext';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'United Training Consulting',
-  description: 'Expert technology consulting for banks, tech companies, and enterprise industries',
-}
+  description:
+    'Expert technology consulting for banks, tech companies, and enterprise industries',
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -22,5 +23,5 @@ export default function RootLayout({ children }) {
         </LanguageProvider>
       </body>
     </html>
-  )
+  );
 }

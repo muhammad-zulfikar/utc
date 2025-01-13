@@ -1,42 +1,51 @@
-"use client";
+'use client';
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/context/LanguageContext";
-import { Building2, Users, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/LanguageContext';
+import { Building2, Users, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
 
   const services = [
     {
-      title: "Public Training Programs",
-      description: "Open enrollment courses designed for individuals and small teams. Join a diverse group of professionals in our structured learning environment with industry-leading instructors.",
+      title: 'Public Training Programs',
+      description:
+        'Open enrollment courses designed for individuals and small teams. Join a diverse group of professionals in our structured learning environment with industry-leading instructors.',
       features: [
-        "Flexible scheduling options",
-        "Networking opportunities",
-        "Standardized curriculum",
-        "Certificate upon completion"
+        'Flexible scheduling options',
+        'Networking opportunities',
+        'Standardized curriculum',
+        'Certificate upon completion',
       ],
       icon: <Users className="w-10 h-10 text-[#FFC000]" />,
-      link: "/training/public",
-      imageSrc: "/pexels2.jpg"
+      link: '/training/public',
+      imageSrc: '/pexels2.jpg',
     },
     {
-      title: "In-House Training",
-      description: "Customized training solutions delivered exclusively to your organization. We adapt our content to address your specific challenges and business objectives.",
+      title: 'In-House Training',
+      description:
+        'Customized training solutions delivered exclusively to your organization. We adapt our content to address your specific challenges and business objectives.',
       features: [
-        "Tailored content delivery",
-        "Company-specific cases",
-        "On-site or virtual options",
-        "Team building focus"
+        'Tailored content delivery',
+        'Company-specific cases',
+        'On-site or virtual options',
+        'Team building focus',
       ],
       icon: <Building2 className="w-10 h-10 text-[#FFC000]" />,
-      link: "/training/in-house",
-      imageSrc: "/pexels3.jpg"
-    }
+      link: '/training/in-house',
+      imageSrc: '/pexels3.jpg',
+    },
   ];
 
   return (
@@ -50,28 +59,33 @@ const ServicesSection = () => {
             Choose the training format that best suits your needs
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <Card
+              key={index}
+              className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
               <div className="relative h-48 overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${service.imageSrc})`,
                   }}
                 />
                 <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute top-4 left-4">
-                  {service.icon}
-                </div>
+                <div className="absolute top-4 left-4">{service.icon}</div>
               </div>
-              
+
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-base">
+                  {service.description}
+                </CardDescription>
               </CardHeader>
-              
+
               <CardContent>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
@@ -82,13 +96,10 @@ const ServicesSection = () => {
                   ))}
                 </ul>
               </CardContent>
-              
+
               <CardFooter>
                 <Link href={service.link} className="w-full">
-                  <Button 
-                    variant="default" 
-                    className="w-full group"
-                  >
+                  <Button variant="default" className="w-full group">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>

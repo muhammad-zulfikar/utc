@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
-import { useLanguage } from "@/context/LanguageContext";
+import React, { useEffect, useState } from 'react';
+import { Card } from '@/components/ui/card';
+import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 const ClientSection = () => {
   const { t } = useLanguage();
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const logos = [
-    { src: "/images/clients/pln.png", alt: "PLN" },
-    { src: "/images/clients/chevron.png", alt: "Chevron" },
-    { src: "/images/clients/semen-padang.png", alt: "Semen Padang" },
-    { src: "/images/clients/krakatau-steel.png", alt: "Krakatau Steel" },
-    { src: "/images/clients/pelindo.png", alt: "Pelindo" },
-    { src: "/images/clients/mandiri.png", alt: "Mandiri" },
-    { src: "/images/clients/pertamina.png", alt: "Pertamina" },
-    { src: "/images/clients/pusri.png", alt: "PUSRI" },
-    { src: "/images/clients/bukit-asam.png", alt: "Bukit Asam" },
-    { src: "/images/clients/bogasari.png", alt: "Bogasari" },
-    { src: "/images/clients/ahm.png", alt: "Astra Honda Motor" },
-    { src: "/images/clients/nhm.png", alt: "Nusa Halmahera Mineral" },
-    { src: "/images/clients/ytlpower.png", alt: "YTL Power" },
-    { src: "/images/clients/mitsuba.png", alt: "Mitsuba Indonesia" },
-    { src: "/images/clients/lbe.png", alt: "Lestari Banten Energi" },
+    { src: '/images/clients/pln.png', alt: 'PLN' },
+    { src: '/images/clients/chevron.png', alt: 'Chevron' },
+    { src: '/images/clients/semen-padang.png', alt: 'Semen Padang' },
+    { src: '/images/clients/krakatau-steel.png', alt: 'Krakatau Steel' },
+    { src: '/images/clients/pelindo.png', alt: 'Pelindo' },
+    { src: '/images/clients/mandiri.png', alt: 'Mandiri' },
+    { src: '/images/clients/pertamina.png', alt: 'Pertamina' },
+    { src: '/images/clients/pusri.png', alt: 'PUSRI' },
+    { src: '/images/clients/bukit-asam.png', alt: 'Bukit Asam' },
+    { src: '/images/clients/bogasari.png', alt: 'Bogasari' },
+    { src: '/images/clients/ahm.png', alt: 'Astra Honda Motor' },
+    { src: '/images/clients/nhm.png', alt: 'Nusa Halmahera Mineral' },
+    { src: '/images/clients/ytlpower.png', alt: 'YTL Power' },
+    { src: '/images/clients/mitsuba.png', alt: 'Mitsuba Indonesia' },
+    { src: '/images/clients/lbe.png', alt: 'Lestari Banten Energi' },
   ];
 
   useEffect(() => {
@@ -42,11 +42,9 @@ const ClientSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            {t("clients.title")}
+            {t('clients.title')}
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
-            {t("clients.subtitle")}
-          </p>
+          <p className="mt-4 text-xl text-gray-600">{t('clients.subtitle')}</p>
         </div>
 
         <Card className="overflow-hidden border-none shadow-none bg-transparent">
