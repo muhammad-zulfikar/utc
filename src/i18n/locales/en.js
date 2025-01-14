@@ -62,30 +62,31 @@ export const en = {
       learnMore: 'Learn More',
     },
     syllabus: {
-      title: "Explore Our Syllabus",
-      subtitle: "A curated selection of topics designed to tackle modern enterprise challenges and inspire innovation.",
+      title: 'Explore Our Syllabus',
+      subtitle:
+        'A curated selection of topics designed to tackle modern enterprise challenges and inspire innovation.',
       categories: {
         miningElectrical: {
-          title: "Mining, Electrical & Production",
-          description: "Technical training for industrial operations"
+          title: 'Mining, Electrical & Production',
+          description: 'Technical training for industrial operations',
         },
         operations: {
-          title: "Operation & Maintenance",
-          description: "Comprehensive maintenance and operational training"
+          title: 'Operation & Maintenance',
+          description: 'Comprehensive maintenance and operational training',
         },
         finance: {
-          title: "Finance, Accounting & Logistics",
-          description: "Financial and operational management training"
+          title: 'Finance, Accounting & Logistics',
+          description: 'Financial and operational management training',
         },
         management: {
-          title: "Management, Secretary, Administration & PR",
-          description: "Leadership and organizational development"
+          title: 'Management, Secretary, Administration & PR',
+          description: 'Leadership and organizational development',
         },
         safety: {
-          title: "Health, Safety & Environment",
-          description: "Workplace safety and environmental management"
-        }
-      }
+          title: 'Health, Safety & Environment',
+          description: 'Workplace safety and environmental management',
+        },
+      },
     },
     clients: {
       title: 'Trusted by Industry Leaders',
@@ -123,27 +124,32 @@ export const en = {
   services: {
     publicTraining: {
       title: 'Public Training Programs',
-      description: 'Join our comprehensive training programs designed to enhance your professional skills and advance your career through hands-on learning experiences.',
+      description:
+        'Join our comprehensive training programs designed to enhance your professional skills and advance your career through hands-on learning experiences.',
       whyChooseUs: {
         title: 'Why Choose Our Public Training?',
         benefits: {
           networking: {
             title: 'Networking Opportunities',
-            description: 'Connect with professionals across different industries and expand your professional network.'
+            description:
+              'Connect with professionals across different industries and expand your professional network.',
           },
           scheduling: {
             title: 'Flexible Scheduling',
-            description: 'Choose from multiple dates throughout the year that best fit your schedule.'
+            description:
+              'Choose from multiple dates throughout the year that best fit your schedule.',
           },
           certification: {
             title: 'Certification',
-            description: 'Receive industry-recognized certification upon successful completion of the program.'
+            description:
+              'Receive industry-recognized certification upon successful completion of the program.',
           },
           timeEfficient: {
             title: 'Time-Efficient',
-            description: 'Concentrated learning experience designed to maximize your time investment.'
-          }
-        }
+            description:
+              'Concentrated learning experience designed to maximize your time investment.',
+          },
+        },
       },
       availablePrograms: {
         title: 'Available Programs',
@@ -160,64 +166,75 @@ export const en = {
           offlinePrice: 'Offline Price',
           location: 'Location',
           phone: 'Phone Number',
-          email: 'E-mail Address'
+          email: 'E-mail Address',
         },
         pagination: {
           rowsPerPage: 'Rows per page:',
-          pageOf: 'Page {0} of {1}'
-        }
-      }
+          pageOf: 'Page {0} of {1}',
+        },
+      },
     },
     inHouseTraining: {
       title: 'In-House Training Solutions',
-      description: 'Custom-designed training programs delivered exclusively for your organization, aligned with your business objectives and culture.',
+      description:
+        'Custom-designed training programs delivered exclusively for your organization, aligned with your business objectives and culture.',
       whyChooseUs: {
         title: 'Why Choose In-House Training?',
         features: {
           customContent: {
             title: 'Customized Content',
-            description: "Training materials tailored to your organization's specific needs and objectives"
+            description:
+              "Training materials tailored to your organization's specific needs and objectives",
           },
           teamDevelopment: {
             title: 'Team Development',
-            description: 'Build stronger teams through shared learning experiences and collaborative exercises'
+            description:
+              'Build stronger teams through shared learning experiences and collaborative exercises',
           },
           onSiteDelivery: {
             title: 'On-site Delivery',
-            description: 'Training conducted at your preferred location for maximum convenience'
+            description:
+              'Training conducted at your preferred location for maximum convenience',
           },
           flexibleFormat: {
             title: 'Flexible Format',
-            description: 'Choose between in-person, virtual, or hybrid delivery methods'
-          }
-        }
+            description:
+              'Choose between in-person, virtual, or hybrid delivery methods',
+          },
+        },
       },
       faq: {
         title: 'Frequently Asked Questions',
         items: [
           {
             question: 'How long does a typical in-house training program last?',
-            answer: "Program duration is flexible and can be customized based on your needs, typically ranging from 1-5 days. We work with you to determine the optimal length based on content complexity and your team's availability."
+            answer:
+              "Program duration is flexible and can be customized based on your needs, typically ranging from 1-5 days. We work with you to determine the optimal length based on content complexity and your team's availability.",
           },
           {
             question: 'What is the minimum group size required?',
-            answer: 'We recommend a minimum of 8 participants to ensure interactive learning and cost-effectiveness, with a maximum of 25 participants per session to maintain quality interaction.'
+            answer:
+              'We recommend a minimum of 8 participants to ensure interactive learning and cost-effectiveness, with a maximum of 25 participants per session to maintain quality interaction.',
           },
           {
             question: 'Can the training be delivered virtually?',
-            answer: 'Yes, we offer fully virtual and hybrid options using enterprise-grade video conferencing platforms. Our virtual training maintains the same level of interaction and engagement as in-person sessions.'
+            answer:
+              'Yes, we offer fully virtual and hybrid options using enterprise-grade video conferencing platforms. Our virtual training maintains the same level of interaction and engagement as in-person sessions.',
           },
           {
-            question: 'How do you ensure the training meets our specific needs?',
-            answer: 'We begin with a thorough needs assessment, reviewing your objectives, challenges, and desired outcomes. Our instructional designers then customize the content, including relevant case studies and exercises specific to your industry.'
-          }
-        ]
-      }
-    }
+            question:
+              'How do you ensure the training meets our specific needs?',
+            answer:
+              'We begin with a thorough needs assessment, reviewing your objectives, challenges, and desired outcomes. Our instructional designers then customize the content, including relevant case studies and exercises specific to your industry.',
+          },
+        ],
+      },
+    },
   },
   about: {
     title: 'About Us',
-    description: 'Discover who we are, what we stand for, and how we excel in training and consulting.',
+    description:
+      'Discover who we are, what we stand for, and how we excel in training and consulting.',
     hero: {
       title: 'United Training Consulting',
       subtitle: 'Professional Training and Management Consulting Since 2010',
@@ -268,7 +285,8 @@ export const en = {
       features: [
         {
           title: 'Expert Instructors',
-          description: 'Highly qualified professionals with extensive industry experience.',
+          description:
+            'Highly qualified professionals with extensive industry experience.',
         },
         {
           title: 'Proven Track Record',
@@ -303,15 +321,18 @@ export const en = {
         },
         {
           title: 'Quality Assurance',
-          description: 'Continuous improvement in training materials and delivery methods.',
+          description:
+            'Continuous improvement in training materials and delivery methods.',
         },
         {
           title: 'Innovation Focus',
-          description: 'Staying at the forefront of industry trends and methodologies.',
+          description:
+            'Staying at the forefront of industry trends and methodologies.',
         },
         {
           title: 'Client Success',
-          description: 'Dedicated to achieving measurable results and fostering long-term growth.',
+          description:
+            'Dedicated to achieving measurable results and fostering long-term growth.',
         },
       ],
     },
@@ -337,8 +358,10 @@ export const en = {
     form: {
       title: 'Send us a message',
       consultationTitle: 'Schedule a Consultation',
-      subtitle: "Fill out the form below and we'll get back to you as soon as possible.",
-      consultationSubtitle: 'Please provide your contact information to schedule a consultation.',
+      subtitle:
+        "Fill out the form below and we'll get back to you as soon as possible.",
+      consultationSubtitle:
+        'Please provide your contact information to schedule a consultation.',
       name: 'Name',
       namePlaceholder: 'Your full name',
       emailAddress: 'Email Address',
@@ -348,29 +371,32 @@ export const en = {
         placeholder: 'Select a reason',
         question: 'Questions about Services',
         general: 'General Inquiry',
-        book: 'Book Consultation'
+        book: 'Book Consultation',
       },
       message: 'Message',
       messagePlaceholder: 'Your message...',
       scheduleButton: 'Schedule Consultation',
-      sendButton: 'Send Message'
+      cancelButton: 'Cancel',
+      sending: 'Sending',
+      sendButton: 'Send Message',
     },
     office: {
       title: 'Head Office',
-      address: 'Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Palmerah, Matraman Jakarta Timur 13140'
+      address:
+        'Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Palmerah, Matraman Jakarta Timur 13140',
     },
     phone: {
       title: 'Phone',
       gunawan: '+62 821 2283 6526 (Gunawan)',
-      mimie: '+62 813 1851 7205 (Mimie)'
+      mimie: '+62 813 1851 7205 (Mimie)',
     },
     email: {
       title: 'Email',
-      address: 'gunawan@united-trainingdevelopment.com'
+      address: 'gunawan@united-trainingdevelopment.com',
     },
     socials: {
       title: 'Social Media',
-    }
+    },
   },
   footer: {
     companyName: 'United Training Consultant',

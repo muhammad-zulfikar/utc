@@ -18,9 +18,21 @@ const ClientSection = () => {
   };
 
   const logos = [
-    { src: '/images/clients/pln.png', alt: 'PLN', category: 'energy' },
-    { src: '/images/clients/chevron.png', alt: 'Chevron', category: 'energy' },
-    { src: '/images/clients/cirebon-power.png', alt: 'Cirebon Power', category: 'energy' },
+    {
+      src: '/images/clients/pln.png',
+      alt: 'PLN',
+      category: 'energy',
+    },
+    {
+      src: '/images/clients/chevron.png',
+      alt: 'Chevron',
+      category: 'energy',
+    },
+    {
+      src: '/images/clients/cirebon-power.png',
+      alt: 'Cirebon Power',
+      category: 'energy',
+    },
     {
       src: '/images/clients/semen-padang.png',
       alt: 'Semen Padang',
@@ -31,7 +43,11 @@ const ClientSection = () => {
       alt: 'Krakatau Steel',
       category: 'manufacturing',
     },
-    { src: '/images/clients/pelindo.png', alt: 'Pelindo', category: 'energy' },
+    {
+      src: '/images/clients/pelindo.png',
+      alt: 'Pelindo',
+      category: 'energy',
+    },
     {
       src: '/images/clients/mandiri.png',
       alt: 'Mandiri',

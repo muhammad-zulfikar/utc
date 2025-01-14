@@ -10,11 +10,11 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Footer from '../components/Footer';
-import { 
-  Target, 
-  Award, 
+import {
+  Target,
+  Award,
   Building2,
-  Shield, 
+  Shield,
   BookOpen,
   GraduationCap,
   BarChart,
@@ -26,7 +26,7 @@ import {
   Scale,
   Clock,
   Trophy,
-  Heart
+  Heart,
 } from 'lucide-react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
@@ -103,7 +103,7 @@ export default function About() {
               </CardTitle>
             </CardHeader>
             <CardContent className="relative z-10 space-y-4">
-                <ul className="space-y-4">
+              <ul className="space-y-4">
                 {t('about.mission.points', { returnObjects: true }).map(
                   (point, index) => (
                     <li key={index} className="flex items-start gap-2">
@@ -126,22 +126,25 @@ export default function About() {
             {[
               {
                 icon: <Shield className="h-8 w-8" />,
-                key: 0
+                key: 0,
               },
               {
                 icon: <Heart className="h-8 w-8" />,
-                key: 1
+                key: 1,
               },
               {
                 icon: <Network className="h-8 w-8" />,
-                key: 2
+                key: 2,
               },
               {
                 icon: <LineChart className="h-8 w-8" />,
-                key: 3
-              }
+                key: 3,
+              },
             ].map((item, index) => (
-              <Card key={index} className="relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Card
+                key={index}
+                className="relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
                 <CardContent className="pt-6">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
@@ -176,30 +179,33 @@ export default function About() {
               {[
                 {
                   icon: <GraduationCap className="h-6 w-6 text-primary" />,
-                  key: 0
+                  key: 0,
                 },
                 {
                   icon: <BarChart className="h-6 w-6 text-primary" />,
-                  key: 1
+                  key: 1,
                 },
                 {
                   icon: <Briefcase className="h-6 w-6 text-primary" />,
-                  key: 2
+                  key: 2,
                 },
                 {
                   icon: <HandshakeIcon className="h-6 w-6 text-primary" />,
-                  key: 3
+                  key: 3,
                 },
                 {
                   icon: <Scale className="h-6 w-6 text-primary" />,
-                  key: 4
+                  key: 4,
                 },
                 {
                   icon: <Clock className="h-6 w-6 text-primary" />,
-                  key: 5
-                }
+                  key: 5,
+                },
               ].map((feature, index) => (
-                <div key={index} className="bg-background p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div
+                  key={index}
+                  className="bg-background p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div className="flex items-center gap-3 mb-3">
                     {feature.icon}
                     <h3 className="font-semibold text-lg">
@@ -232,30 +238,37 @@ export default function About() {
               {[
                 {
                   icon: <Network className="h-6 w-6 text-primary" />,
-                  key: 0
+                  key: 0,
                 },
                 {
                   icon: <Shield className="h-6 w-6 text-primary" />,
-                  key: 1
+                  key: 1,
                 },
                 {
                   icon: <LineChart className="h-6 w-6 text-primary" />,
-                  key: 2
+                  key: 2,
                 },
                 {
                   icon: <Trophy className="h-6 w-6 text-primary" />,
-                  key: 3
-                }
+                  key: 3,
+                },
               ].map((strategy, index) => (
-                <div key={index} className="bg-background p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div
+                  key={index}
+                  className="bg-background p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div className="flex items-center gap-3 mb-3">
                     {strategy.icon}
                     <h3 className="font-semibold text-lg">
-                      {t(`about.strategicApproach.strategies.${strategy.key}.title`)}
+                      {t(
+                        `about.strategicApproach.strategies.${strategy.key}.title`
+                      )}
                     </h3>
                   </div>
                   <p className="text-muted-foreground">
-                    {t(`about.strategicApproach.strategies.${strategy.key}.description`)}
+                    {t(
+                      `about.strategicApproach.strategies.${strategy.key}.description`
+                    )}
                   </p>
                 </div>
               ))}

@@ -13,12 +13,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import {
-  Building2,
-  Users2,
-  Target,
-  Settings,
-} from 'lucide-react';
+import { Building2, Users2, Target, Settings } from 'lucide-react';
 import CtaSection from '@/app/home/cta';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -60,7 +55,9 @@ function InHouseTraining() {
           {t('services.inHouseTraining.whyChooseUs.title')}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {Object.entries(t('services.inHouseTraining.whyChooseUs.features')).map(([key, feature]) => (
+          {Object.entries(
+            t('services.inHouseTraining.whyChooseUs.features')
+          ).map(([key, feature]) => (
             <Card key={key} className="border-2 border-gray-100">
               <CardHeader className="space-y-4">
                 <div>{featureIcons[key]}</div>

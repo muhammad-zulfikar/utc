@@ -36,7 +36,8 @@ export const id = {
     },
     services: {
       title: 'Telusuri Layanan Training Kami',
-      subtitle: 'Pilih format pelatihan yang paling sesuai dengan kebutuhan Anda',
+      subtitle:
+        'Pilih format pelatihan yang paling sesuai dengan kebutuhan Anda',
       publicTraining: {
         title: 'Pelatihan Publik',
         description:
@@ -62,30 +63,31 @@ export const id = {
       learnMore: 'Pelajari Lebih Lanjut',
     },
     syllabus: {
-      title: "Jelajahi Silabus Kami",
-      subtitle: "Pilihan topik yang dikurasi untuk mengatasi tantangan perusahaan modern dan menginspirasi inovasi.",
+      title: 'Jelajahi Silabus Kami',
+      subtitle:
+        'Pilihan topik yang dikurasi untuk mengatasi tantangan perusahaan modern dan menginspirasi inovasi.',
       categories: {
         miningElectrical: {
-          title: "Pertambangan, Kelistrikan & Produksi",
-          description: "Pelatihan teknis untuk operasi industri"
+          title: 'Pertambangan, Kelistrikan & Produksi',
+          description: 'Pelatihan teknis untuk operasi industri',
         },
         operations: {
-          title: "Operasi & Pemeliharaan",
-          description: "Pelatihan komprehensif pemeliharaan dan operasional"
+          title: 'Operasi & Pemeliharaan',
+          description: 'Pelatihan komprehensif pemeliharaan dan operasional',
         },
         finance: {
-          title: "Keuangan, Akuntansi & Logistik",
-          description: "Pelatihan manajemen keuangan dan operasional"
+          title: 'Keuangan, Akuntansi & Logistik',
+          description: 'Pelatihan manajemen keuangan dan operasional',
         },
         management: {
-          title: "Manajemen, Sekretaris, Administrasi & Humas",
-          description: "Kepemimpinan dan pengembangan organisasi"
+          title: 'Manajemen, Sekretaris, Administrasi & Humas',
+          description: 'Kepemimpinan dan pengembangan organisasi',
         },
         safety: {
-          title: "Kesehatan, Keselamatan & Lingkungan",
-          description: "Keselamatan kerja dan manajemen lingkungan"
-        }
-      }
+          title: 'Kesehatan, Keselamatan & Lingkungan',
+          description: 'Keselamatan kerja dan manajemen lingkungan',
+        },
+      },
     },
     clients: {
       title: 'Dipercaya oleh Pemimpin Industri',
@@ -123,27 +125,32 @@ export const id = {
   services: {
     publicTraining: {
       title: 'Program Pelatihan Publik',
-      description: 'Bergabunglah dengan program pelatihan komprehensif kami yang dirancang untuk meningkatkan keterampilan profesional dan mengembangkan karir Anda melalui pengalaman belajar praktis.',
+      description:
+        'Bergabunglah dengan program pelatihan komprehensif kami yang dirancang untuk meningkatkan keterampilan profesional dan mengembangkan karir Anda melalui pengalaman belajar praktis.',
       whyChooseUs: {
         title: 'Mengapa Memilih Pelatihan Publik Kami?',
         benefits: {
           networking: {
             title: 'Kesempatan Jejaring',
-            description: 'Terhubung dengan para profesional dari berbagai industri dan perluas jaringan profesional Anda.'
+            description:
+              'Terhubung dengan para profesional dari berbagai industri dan perluas jaringan profesional Anda.',
           },
           scheduling: {
             title: 'Jadwal Fleksibel',
-            description: 'Pilih dari berbagai tanggal sepanjang tahun yang paling sesuai dengan jadwal Anda.'
+            description:
+              'Pilih dari berbagai tanggal sepanjang tahun yang paling sesuai dengan jadwal Anda.',
           },
           certification: {
             title: 'Sertifikasi',
-            description: 'Dapatkan sertifikasi yang diakui industri setelah berhasil menyelesaikan program.'
+            description:
+              'Dapatkan sertifikasi yang diakui industri setelah berhasil menyelesaikan program.',
           },
           timeEfficient: {
             title: 'Efisien Waktu',
-            description: 'Pengalaman belajar terkonsentrasi yang dirancang untuk memaksimalkan investasi waktu Anda.'
-          }
-        }
+            description:
+              'Pengalaman belajar terkonsentrasi yang dirancang untuk memaksimalkan investasi waktu Anda.',
+          },
+        },
       },
       availablePrograms: {
         title: 'Program yang Tersedia',
@@ -160,64 +167,75 @@ export const id = {
           offlinePrice: 'Biaya Offline',
           location: 'Lokasi',
           phone: 'Nomor Telepon',
-          email: 'Alamat Email'
+          email: 'Alamat Email',
         },
         pagination: {
           rowsPerPage: 'Baris per halaman:',
-          pageOf: 'Halaman {0} dari {1}'
-        }
-      }
+          pageOf: 'Halaman {0} dari {1}',
+        },
+      },
     },
     inHouseTraining: {
       title: 'Program Pelatihan In-House',
-      description: 'Program pelatihan yang dirancang khusus untuk organisasi Anda, selaras dengan tujuan bisnis dan budaya perusahaan.',
+      description:
+        'Program pelatihan yang dirancang khusus untuk organisasi Anda, selaras dengan tujuan bisnis dan budaya perusahaan.',
       whyChooseUs: {
         title: 'Mengapa Memilih Pelatihan In-House?',
         features: {
           customContent: {
             title: 'Konten yang Disesuaikan',
-            description: 'Materi pelatihan disesuaikan dengan kebutuhan dan tujuan spesifik organisasi Anda'
+            description:
+              'Materi pelatihan disesuaikan dengan kebutuhan dan tujuan spesifik organisasi Anda',
           },
           teamDevelopment: {
             title: 'Pengembangan Tim',
-            description: 'Membangun tim yang lebih kuat melalui pengalaman belajar bersama dan latihan kolaboratif'
+            description:
+              'Membangun tim yang lebih kuat melalui pengalaman belajar bersama dan latihan kolaboratif',
           },
           onSiteDelivery: {
             title: 'Pelatihan di Tempat',
-            description: 'Pelatihan dilakukan di lokasi pilihan Anda untuk kenyamanan maksimal'
+            description:
+              'Pelatihan dilakukan di lokasi pilihan Anda untuk kenyamanan maksimal',
           },
           flexibleFormat: {
             title: 'Format Fleksibel',
-            description: 'Pilih antara metode tatap muka, virtual, atau hybrid'
-          }
-        }
+            description: 'Pilih antara metode tatap muka, virtual, atau hybrid',
+          },
+        },
       },
       faq: {
         title: 'Pertanyaan yang Sering Diajukan',
         items: [
           {
-            question: 'Berapa lama program pelatihan in-house biasanya berlangsung?',
-            answer: 'Durasi program fleksibel dan dapat disesuaikan berdasarkan kebutuhan Anda, biasanya berkisar antara 1-5 hari. Kami bekerja sama dengan Anda untuk menentukan durasi optimal berdasarkan kompleksitas konten dan ketersediaan tim Anda.'
+            question:
+              'Berapa lama program pelatihan in-house biasanya berlangsung?',
+            answer:
+              'Durasi program fleksibel dan dapat disesuaikan berdasarkan kebutuhan Anda, biasanya berkisar antara 1-5 hari. Kami bekerja sama dengan Anda untuk menentukan durasi optimal berdasarkan kompleksitas konten dan ketersediaan tim Anda.',
           },
           {
             question: 'Berapa ukuran grup minimum yang diperlukan?',
-            answer: 'Kami merekomendasikan minimum 8 peserta untuk memastikan pembelajaran interaktif dan efektivitas biaya, dengan maksimum 25 peserta per sesi untuk menjaga kualitas interaksi.'
+            answer:
+              'Kami merekomendasikan minimum 8 peserta untuk memastikan pembelajaran interaktif dan efektivitas biaya, dengan maksimum 25 peserta per sesi untuk menjaga kualitas interaksi.',
           },
           {
             question: 'Apakah pelatihan dapat dilakukan secara virtual?',
-            answer: 'Ya, kami menawarkan opsi virtual penuh dan hybrid menggunakan platform video conference enterprise. Pelatihan virtual kami mempertahankan tingkat interaksi dan keterlibatan yang sama dengan sesi tatap muka.'
+            answer:
+              'Ya, kami menawarkan opsi virtual penuh dan hybrid menggunakan platform video conference enterprise. Pelatihan virtual kami mempertahankan tingkat interaksi dan keterlibatan yang sama dengan sesi tatap muka.',
           },
           {
-            question: 'Bagaimana Anda memastikan pelatihan memenuhi kebutuhan spesifik kami?',
-            answer: 'Kami memulai dengan penilaian kebutuhan yang menyeluruh, meninjau tujuan, tantangan, dan hasil yang diinginkan. Tim desainer instruksional kami kemudian menyesuaikan konten, termasuk studi kasus dan latihan yang relevan dengan industri Anda.'
-          }
-        ]
-      }
-    }
+            question:
+              'Bagaimana Anda memastikan pelatihan memenuhi kebutuhan spesifik kami?',
+            answer:
+              'Kami memulai dengan penilaian kebutuhan yang menyeluruh, meninjau tujuan, tantangan, dan hasil yang diinginkan. Tim desainer instruksional kami kemudian menyesuaikan konten, termasuk studi kasus dan latihan yang relevan dengan industri Anda.',
+          },
+        ],
+      },
+    },
   },
   about: {
     title: 'Tentang Kami',
-    description: 'Pelajari siapa kami, apa yang kami perjuangkan, dan bagaimana kami unggul dalam pelatihan dan konsultasi.',
+    description:
+      'Pelajari siapa kami, apa yang kami perjuangkan, dan bagaimana kami unggul dalam pelatihan dan konsultasi.',
     hero: {
       title: 'United Training Consulting',
       subtitle: 'Pelatihan Profesional dan Konsultasi Manajemen Sejak 2010',
@@ -254,7 +272,8 @@ export const id = {
         },
         {
           title: 'Pertumbuhan Kolaboratif',
-          description: 'Membangun kemitraan yang kuat untuk kesuksesan bersama.',
+          description:
+            'Membangun kemitraan yang kuat untuk kesuksesan bersama.',
         },
         {
           title: 'Inovasi Berkelanjutan',
@@ -268,7 +287,8 @@ export const id = {
       features: [
         {
           title: 'Instruktur Ahli',
-          description: 'Profesional berkualifikasi tinggi dengan pengalaman industri yang luas.',
+          description:
+            'Profesional berkualifikasi tinggi dengan pengalaman industri yang luas.',
         },
         {
           title: 'Rekam Jejak Terbukti',
@@ -303,15 +323,18 @@ export const id = {
         },
         {
           title: 'Jaminan Kualitas',
-          description: 'Peningkatan berkelanjutan dalam materi pelatihan dan metode penyampaian.',
+          description:
+            'Peningkatan berkelanjutan dalam materi pelatihan dan metode penyampaian.',
         },
         {
           title: 'Fokus Inovasi',
-          description: 'Selalu berada di garis depan tren dan metodologi industri.',
+          description:
+            'Selalu berada di garis depan tren dan metodologi industri.',
         },
         {
           title: 'Keberhasilan Klien',
-          description: 'Berkomitmen untuk mencapai hasil yang terukur dan pertumbuhan jangka panjang.',
+          description:
+            'Berkomitmen untuk mencapai hasil yang terukur dan pertumbuhan jangka panjang.',
         },
       ],
     },
@@ -333,12 +356,15 @@ export const id = {
   },
   contact: {
     title: 'Hubungi Kami',
-    description: 'Hubungi tim profesional kami untuk mendapatkan bantuan lebih lanjut',
+    description:
+      'Hubungi tim profesional kami untuk mendapatkan bantuan lebih lanjut',
     form: {
       title: 'Kirim pesan kepada kami',
       consultationTitle: 'Jadwalkan Konsultasi',
-      subtitle: 'Isi formulir di bawah ini dan kami akan segera menghubungi Anda.',
-      consultationSubtitle: 'Silakan berikan informasi kontak Anda untuk menjadwalkan konsultasi.',
+      subtitle:
+        'Isi formulir di bawah ini dan kami akan segera menghubungi Anda.',
+      consultationSubtitle:
+        'Silakan berikan informasi kontak Anda untuk menjadwalkan konsultasi.',
       name: 'Nama',
       namePlaceholder: 'Nama lengkap Anda',
       emailAddress: 'Alamat Email',
@@ -348,29 +374,32 @@ export const id = {
         placeholder: 'Pilih alasan',
         question: 'Pertanyaan tentang Layanan',
         general: 'Pertanyaan Umum',
-        book: 'Pesan Konsultasi'
+        book: 'Konsultasi Pemesanan',
       },
       message: 'Pesan',
       messagePlaceholder: 'Pesan Anda...',
       scheduleButton: 'Jadwalkan Konsultasi',
-      sendButton: 'Kirim Pesan'
+      cancelButton: 'Batal',
+      sending: 'Mengirim',
+      sendButton: 'Kirim Pesan',
     },
     office: {
       title: 'Kantor Pusat',
-      address: 'Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Palmerah, Matraman Jakarta Timur 13140'
+      address:
+        'Gedung ASCOM, Lt.2 Jl. Matraman Raya No.67 Palmerah, Matraman Jakarta Timur 13140',
     },
     phone: {
       title: 'Telepon',
       gunawan: '+62 821 2283 6526 (Gunawan)',
-      mimie: '+62 813 1851 7205 (Mimie)'
+      mimie: '+62 813 1851 7205 (Mimie)',
     },
     email: {
       title: 'Email',
-      address: 'gunawan@united-trainingdevelopment.com'
+      address: 'gunawan@united-trainingdevelopment.com',
     },
     socials: {
       title: 'Media Sosial',
-    }
+    },
   },
   footer: {
     companyName: 'United Training Consultant',

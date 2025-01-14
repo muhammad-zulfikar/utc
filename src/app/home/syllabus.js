@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -28,13 +28,18 @@ export default function SyllabusSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            {t('home.syllabus.title').split(/(Silabus|Syllabus)/i).map((word, index) => 
-              (word.toLowerCase() === 'silabus' || word.toLowerCase() === 'syllabus') ? (
-                <span key={index} className="text-primary">{word}</span>
-              ) : (
-                <span key={index}>{word}</span>
-              )
-            )}
+            {t('home.syllabus.title')
+              .split(/(Silabus|Syllabus)/i)
+              .map((word, index) =>
+                word.toLowerCase() === 'silabus' ||
+                word.toLowerCase() === 'syllabus' ? (
+                  <span key={index} className="text-primary">
+                    {word}
+                  </span>
+                ) : (
+                  <span key={index}>{word}</span>
+                )
+              )}
           </h2>
           <p className="mt-4 text-xl text-gray-600">
             {t('home.syllabus.subtitle')}

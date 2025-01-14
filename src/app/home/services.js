@@ -55,7 +55,9 @@ const ServicesSection = () => {
             <span className="text-primary">Training</span>
             {t('home.services.title').split('Training')[1]}
           </h2>
-          <p className="mt-4 text-xl text-gray-600">{t('home.services.subtitle')}</p>
+          <p className="mt-4 text-xl text-gray-600">
+            {t('home.services.subtitle')}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">

@@ -68,15 +68,17 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">{t('contact.form.name')}</Label>
-                  <Input 
-                    id="name" 
-                    placeholder={t('contact.form.namePlaceholder')} 
-                    required 
+                  <Input
+                    id="name"
+                    placeholder={t('contact.form.namePlaceholder')}
+                    required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('contact.form.emailAddress')}</Label>
+                  <Label htmlFor="email">
+                    {t('contact.form.emailAddress')}
+                  </Label>
                   <Input
                     id="email"
                     type="email"
@@ -86,10 +88,14 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="reason">{t('contact.form.reason.title')}</Label>
+                  <Label htmlFor="reason">
+                    {t('contact.form.reason.title')}
+                  </Label>
                   <Select onValueChange={setContactReason} required>
                     <SelectTrigger>
-                      <SelectValue placeholder={t('contact.form.reason.placeholder')} />
+                      <SelectValue
+                        placeholder={t('contact.form.reason.placeholder')}
+                      />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="services">
@@ -151,13 +157,9 @@ export default function Contact() {
               <CardHeader>
                 <Building2 className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>
-                  <div className="mb-3">
-                    {t('contact.office.title')}
-                  </div>
+                  <div className="mb-3">{t('contact.office.title')}</div>
                 </CardTitle>
-                <CardDescription>
-                  {t('contact.office.address')}
-                </CardDescription>
+                <CardDescription>{t('contact.office.address')}</CardDescription>
               </CardHeader>
             </Card>
 
@@ -165,9 +167,7 @@ export default function Contact() {
               <CardHeader>
                 <Phone className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>
-                  <div className="mb-3">
-                    {t('contact.phone.title')}
-                  </div>
+                  <div className="mb-3">{t('contact.phone.title')}</div>
                 </CardTitle>
                 <CardDescription>
                   <li>
@@ -198,9 +198,7 @@ export default function Contact() {
               <CardHeader>
                 <Mail className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>
-                  <div className="mb-3">
-                    {t('contact.email.title')}
-                  </div>
+                  <div className="mb-3">{t('contact.email.title')}</div>
                 </CardTitle>
                 <CardDescription>
                   <a
@@ -219,9 +217,7 @@ export default function Contact() {
               <CardHeader>
                 <Rss className="h-8 w-8 text-[#FFC000] mb-2" />
                 <CardTitle>
-                  <div className="mb-3">
-                    {t('contact.socials.title')}
-                  </div>
+                  <div className="mb-3">{t('contact.socials.title')}</div>
                 </CardTitle>
                 <CardDescription>
                   <div className="space-y-2">

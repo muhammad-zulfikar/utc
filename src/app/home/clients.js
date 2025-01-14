@@ -48,7 +48,9 @@ const ClientSection = () => {
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             {t('home.clients.title')}
           </h2>
-          <p className="mt-4 text-xl text-gray-600">{t('home.clients.subtitle')}</p>
+          <p className="mt-4 text-xl text-gray-600">
+            {t('home.clients.subtitle')}
+          </p>
         </div>
 
         <Card className="overflow-hidden border-none shadow-none bg-transparent">

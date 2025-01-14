@@ -141,7 +141,9 @@ function PublicTraining() {
           {t('services.publicTraining.whyChooseUs.title')}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {Object.entries(t('services.publicTraining.whyChooseUs.benefits')).map(([key, benefit]) => (
+          {Object.entries(
+            t('services.publicTraining.whyChooseUs.benefits')
+          ).map(([key, benefit]) => (
             <Card key={key} className="border-2 border-gray-100">
               <CardHeader className="space-y-4">
                 <div>{benefitIcons[key]}</div>
@@ -194,31 +196,45 @@ function PublicTraining() {
             <TableHeader>
               <TableRow className="bg-gray-200 text-sm font-semibold text-gray-700">
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.trainingTitle')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.trainingTitle'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
                   {t('services.publicTraining.availablePrograms.table.topics')}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.trainingDays')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.trainingDays'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.trainingHours')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.trainingHours'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.startDate')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.startDate'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
                   {t('services.publicTraining.availablePrograms.table.endDate')}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.onlinePrice')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.onlinePrice'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.offlinePrice')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.offlinePrice'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
-                  {t('services.publicTraining.availablePrograms.table.location')}
+                  {t(
+                    'services.publicTraining.availablePrograms.table.location'
+                  )}
                 </TableHead>
                 <TableHead className="whitespace-nowrap">
                   {t('services.publicTraining.availablePrograms.table.phone')}
@@ -273,7 +289,11 @@ function PublicTraining() {
         {/* Pagination Controls */}
         <div className="flex items-center justify-between mt-6 text-sm text-gray-600">
           <div className="hidden md:flex items-center space-x-2">
-            <p>{t('services.publicTraining.availablePrograms.pagination.rowsPerPage')}</p>
+            <p>
+              {t(
+                'services.publicTraining.availablePrograms.pagination.rowsPerPage'
+              )}
+            </p>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline">{itemsPerPage}</Button>
@@ -292,7 +312,9 @@ function PublicTraining() {
           </div>
 
           <span>
-            {t('services.publicTraining.availablePrograms.pagination.pageOf').replace('{0}', currentPage).replace('{1}', totalPages)}
+            {t('services.publicTraining.availablePrograms.pagination.pageOf')
+              .replace('{0}', currentPage)
+              .replace('{1}', totalPages)}
           </span>
 
           <div className="flex items-center space-x-2">

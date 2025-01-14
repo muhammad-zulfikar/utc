@@ -13,24 +13,27 @@ export default function Footer() {
       title: t('nav.profile.title'),
       links: [
         { name: t('nav.profile.aboutUs'), href: '/about' },
-        { name: t('nav.profile.partnersAndClients'), href: '/partners-and-clients' },
+        {
+          name: t('nav.profile.partnersAndClients'),
+          href: '/partners-and-clients',
+        },
         { name: t('nav.profile.gallery'), href: '/gallery' },
-      ]
+      ],
     },
     services: {
       title: t('nav.services.title'),
       links: [
         { name: t('nav.services.publicTraining'), href: '/training/public' },
         { name: t('nav.services.inHouseTraining'), href: '/training/in-house' },
-      ]
+      ],
     },
     other: {
       title: t('footer.quickLinks'),
       links: [
         { name: t('nav.home'), href: '/' },
         { name: t('nav.contact'), href: '/contact' },
-      ]
-    }
+      ],
+    },
   };
 
   return (
@@ -108,7 +111,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 mt-8">
-            <p className="hidden md:flex text-gray-400 text-center">{t('footer.copyright')}</p>
+            <p className="hidden md:flex text-gray-400 text-center">
+              {t('footer.copyright')}
+            </p>
             <div className="flex space-x-6">
               <a
                 href="https://instagram.com"
@@ -165,7 +170,9 @@ export default function Footer() {
                 />
               </a>
             </div>
-            <p className="md:hidden text-gray-400 text-center">{t('footer.copyright')}</p>
+            <p className="md:hidden text-gray-400 text-center">
+              {t('footer.copyright')}
+            </p>
           </div>
         </div>
       </div>

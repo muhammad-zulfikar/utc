@@ -261,10 +261,7 @@ export default function Navigation() {
           {/* Language Selector and Consultation Button */}
           <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
             <LanguageSelector language={language} setLanguage={setLanguage} />
-            <Button 
-              variant="default"
-              onClick={() => setIsModalOpen(true)}
-            >
+            <Button variant="default" onClick={() => setIsModalOpen(true)}>
               {t('nav.consultation')}
             </Button>
             <FormModal
