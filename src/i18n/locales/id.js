@@ -382,6 +382,7 @@ export const id = {
       cancelButton: 'Batal',
       sending: 'Mengirim',
       sendButton: 'Kirim Pesan',
+      success: 'Pesan terkirim!',
     },
     office: {
       title: 'Kantor Pusat',

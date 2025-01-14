@@ -379,6 +379,7 @@ export const en = {
       cancelButton: 'Cancel',
       sending: 'Sending',
       sendButton: 'Send Message',
+      success: 'Message sent!',
     },
     office: {
       title: 'Head Office',
